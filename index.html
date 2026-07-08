@@ -40,13 +40,7 @@ body{
 .fog i:nth-child(3){width:45vw;height:45vw;left:15vw;bottom:-25vw;background:radial-gradient(circle,#182521,transparent 65%);animation:drift1 38s ease-in-out infinite alternate-reverse}
 @keyframes drift1{to{transform:translate(8vw,6vh) scale(1.15)}}
 @keyframes drift2{to{transform:translate(-6vw,-5vh) scale(.9)}}
-.grain{position:fixed;inset:-100%;pointer-events:none;z-index:1;opacity:.05;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation:grain 8s steps(10) infinite}
-@keyframes grain{
-  0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-8%)}20%{transform:translate(-12%,3%)}
-  30%{transform:translate(6%,-10%)}40%{transform:translate(-4%,12%)}50%{transform:translate(-10%,4%)}
-  60%{transform:translate(10%,0)}70%{transform:translate(0,10%)}80%{transform:translate(-8%,-3%)}90%{transform:translate(5%,6%)}}
+body.watching .fog i{animation-play-state:paused}
 
 main,header.site,footer.site{position:relative;z-index:2}
 
@@ -151,7 +145,6 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
 </head>
 <body>
 <div class="fog"><i></i><i></i><i></i></div>
-<div class="grain"></div>
 
 <header class="site">
   <a class="wordmark" href="#">Deep<b>Mist</b>&nbsp;AI</a>
@@ -247,10 +240,10 @@ cards.forEach(c=>{
   c.addEventListener("click",()=>{
     if(v.paused){
       cards.forEach(o=>{const ov=o.querySelector("video");if(ov!==v){ov.pause();o.classList.remove("playing")}});
-      v.muted=false;v.play();c.classList.add("playing");
-    }else{v.pause();c.classList.remove("playing");}
+      v.muted=false;v.play();c.classList.add("playing");document.body.classList.add("watching");
+    }else{v.pause();c.classList.remove("playing");document.body.classList.remove("watching");}
   });
-  v.addEventListener("ended",()=>{v.currentTime=0;c.classList.remove("playing")});
+  v.addEventListener("ended",()=>{v.currentTime=0;c.classList.remove("playing");document.body.classList.remove("watching")});
 });
 // staggered reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{
