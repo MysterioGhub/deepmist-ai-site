@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How We Made the KIBO Ad — Deep Mist AI</title>
+<meta name="description" content="Full breakdown of a 10-second matcha kit AI video ad: the hero still, the voiceover hook, the finished 9:16 cut. How an AI studio builds food and drink UGC.">
+<link rel="canonical" href="https://deepmiststudio.com/made-kibo-matcha-ad.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deepmiststudio.com/made-kibo-matcha-ad.html">
+<meta property="og:title" content="How We Made the KIBO Ad — Deep Mist AI">
+<meta property="og:description" content="A full production breakdown of one 10-second matcha kit ad: the brief, the hook, the stack, and the finished video. Fictional brand, self-initiated.">
+<meta property="og:image" content="https://deepmiststudio.com/media/og/og-made-kibo-matcha-ad.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A matcha kit ad built sound-first">
+<meta property="og:site_name" content="Deep Mist AI">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How We Made the KIBO Ad — Deep Mist AI">
+<meta name="twitter:description" content="A full production breakdown of one 10-second matcha kit ad: the brief, the hook, the stack, and the finished video. Fictional brand, self-initiated.">
+<meta name="twitter:image" content="https://deepmiststudio.com/media/og/og-made-kibo-matcha-ad.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0d0e;
+  --ink-2:#111416;
+  --mist:#c9d4d2;
+  --mist-dim:#77837f;
+  --glow:#8ff0d4;
+  --line:rgba(201,212,210,.14);
+  --serif:"Fraunces",serif;
+  --sans:"Archivo",sans-serif;
+  --wide:"Archivo Expanded",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--mist);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--glow);color:var(--ink)}
+
+.fog{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.fog i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+.fog i:nth-child(1){width:60vw;height:60vw;left:-20vw;top:-25vw;background:radial-gradient(circle,#1d3a33,transparent 65%)}
+.fog i:nth-child(2){width:50vw;height:50vw;right:-18vw;top:20vh;background:radial-gradient(circle,#15272e,transparent 65%)}
+
+main,header.site,footer.site{position:relative;z-index:2}
+
+header.site{display:flex;justify-content:space-between;align-items:center;padding:28px clamp(20px,5vw,64px);border-bottom:1px solid var(--line)}
+.wordmark{font-family:var(--wide);font-weight:600;font-size:14px;letter-spacing:.34em;color:var(--mist);text-decoration:none;text-transform:uppercase}
+.wordmark b{color:var(--glow);font-weight:600}
+nav a{color:var(--mist-dim);text-decoration:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-left:clamp(16px,3vw,40px);transition:color .3s}
+nav a:hover{color:var(--glow)}
+
+.btn{display:inline-block;padding:16px 34px;border-radius:100px;font-family:var(--wide);font-size:13px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:transform .3s,box-shadow .3s}
+.btn-solid{background:var(--glow);color:var(--ink);font-weight:600}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(143,240,212,.25)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+.intro{padding:clamp(56px,9vh,96px) 0 0}
+.crumb{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist-dim);margin-bottom:26px}
+.crumb a{color:var(--mist-dim);text-decoration:none;border-bottom:1px solid var(--line);transition:color .3s,border-color .3s}
+.crumb a:hover{color:var(--glow);border-color:var(--glow)}
+.eyebrow{font-family:var(--wide);font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--glow);margin-bottom:34px;display:flex;align-items:center;gap:16px}
+.eyebrow::before{content:"";display:block;width:44px;height:1px;background:var(--glow)}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(36px,5.6vw,72px);line-height:1.05;letter-spacing:-.015em;color:#e9efee;max-width:16ch}
+h1 em{font-style:italic;font-weight:400;color:var(--glow)}
+.lede{max-width:620px;margin-top:32px;font-size:clamp(16px,1.5vw,19px);color:var(--mist-dim)}
+
+.specpill{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:10px 20px;border:1px solid rgba(143,240,212,.3);border-radius:100px;font-size:13px;color:var(--glow);letter-spacing:.04em}
+.specpill b{font-weight:500;color:var(--mist)}
+
+/* video + brief */
+.stage{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start;margin-top:clamp(48px,7vh,76px)}
+.player{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#000;line-height:0}
+.player video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
+.playercap{font-size:12.5px;color:var(--mist-dim);margin-top:12px;line-height:1.5;letter-spacing:.02em}
+.brief{border:1px solid var(--line);border-radius:18px;padding:30px 28px;background:linear-gradient(160deg,rgba(201,212,210,.03),transparent 60%)}
+.brief h3{font-family:var(--wide);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#e9efee;margin-bottom:20px}
+.brief dl{display:grid;gap:0}
+.brief .row{padding:14px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(94px,auto) 1fr;gap:18px;align-items:baseline}
+.brief .row:first-of-type{border-top:none}
+.brief dt{font-family:var(--wide);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--glow)}
+.brief dd{font-size:15px;color:var(--mist)}
+
+/* the hook */
+.hookblock{margin-top:clamp(52px,7vh,84px);border:1px solid var(--line);border-radius:22px;padding:clamp(30px,4vw,44px);background:linear-gradient(160deg,rgba(143,240,212,.05),transparent 62%)}
+.hookblock h3{font-family:var(--wide);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#e9efee;margin-bottom:22px}
+.hookline{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(24px,3.4vw,40px);line-height:1.2;color:#e9efee;max-width:20ch}
+.hookwhy{margin-top:24px;max-width:660px;color:var(--mist-dim);font-size:15.5px}
+.formatwhy{margin-top:18px;max-width:660px;color:var(--mist-dim);font-size:15.5px}
+.formatwhy b{color:var(--mist);font-weight:500}
+
+/* build steps */
+.built{margin-top:clamp(52px,7vh,84px)}
+.built h3{font-family:var(--wide);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#e9efee;margin-bottom:22px}
+.steplist{list-style:none;border:1px solid var(--line);border-radius:18px;padding:6px 28px;background:linear-gradient(160deg,rgba(201,212,210,.03),transparent 60%);max-width:820px}
+.steplist li{display:flex;gap:22px;padding:22px 0;border-top:1px solid var(--line)}
+.steplist li:first-child{border-top:none}
+.steplist .sn{font-family:var(--wide);font-size:12px;letter-spacing:.16em;color:var(--glow);flex:0 0 auto;padding-top:3px}
+.steplist h4{font-family:var(--wide);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#e9efee;margin-bottom:8px;font-weight:600}
+.steplist p{font-size:15px;color:var(--mist-dim)}
+
+.specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:22px;max-width:820px}
+.spec{border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.spec dt{font-family:var(--wide);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--glow);margin-bottom:6px}
+.spec dd{font-size:14px;color:var(--mist)}
+
+/* watch for */
+.craft{margin-top:clamp(52px,7vh,84px)}
+.craft h3{font-family:var(--wide);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#e9efee;margin-bottom:24px}
+.pts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.pt{border:1px solid var(--line);border-radius:18px;padding:26px 24px;background:linear-gradient(160deg,rgba(201,212,210,.03),transparent 60%)}
+.pt h4{font-family:var(--wide);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--glow);margin-bottom:12px;font-weight:600}
+.pt p{font-size:15px;color:var(--mist-dim)}
+
+.honesty{margin-top:clamp(52px,7vh,84px);border:1px solid var(--line);border-radius:18px;padding:34px 30px;background:linear-gradient(160deg,rgba(143,240,212,.045),transparent 65%)}
+.honesty h3{font-family:var(--wide);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#e9efee;margin-bottom:16px}
+.honesty p{color:var(--mist-dim);font-size:15px;max-width:760px}
+.honesty p + p{margin-top:14px}
+.honesty strong{color:var(--mist);font-weight:500}
+
+.more{margin-top:clamp(52px,7vh,84px)}
+.more h3{font-family:var(--wide);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#e9efee;margin-bottom:20px}
+.nichelinks{display:flex;flex-wrap:wrap;gap:12px}
+.nichelink{display:inline-block;padding:12px 22px;border:1px solid var(--line);border-radius:100px;color:var(--mist);text-decoration:none;font-size:14px;transition:border-color .3s,color .3s}
+.nichelink:hover{border-color:rgba(143,240,212,.45);color:var(--glow)}
+.nichelink.all{border-color:rgba(143,240,212,.3);color:var(--glow)}
+
+.close{padding:clamp(56px,8vh,96px) 0 clamp(70px,10vh,110px)}
+.close h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,4.4vw,52px);line-height:1.1;color:#e9efee;max-width:18ch}
+.close h2 em{font-style:italic;font-weight:400;color:var(--glow)}
+.cta-row{margin-top:40px;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.cta-row .alt{font-size:14px;color:var(--mist-dim);max-width:360px}
+.cta-row .alt a{color:var(--glow);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .3s}
+.cta-row .alt a:hover{border-color:var(--glow)}
+
+footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:var(--mist-dim);font-size:13px}
+footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;color:var(--mist);margin-bottom:10px}
+@media(max-width:860px){
+  .stage{grid-template-columns:1fr}
+  .player{max-width:320px}
+}
+@media(max-width:640px){
+  nav a:not(:last-child){display:none}
+  .steplist{padding:6px 20px}
+  .steplist li{flex-direction:column;gap:10px}
+}
+</style>
+</head>
+<body>
+<div class="fog"><i></i><i></i></div>
+
+<header class="site">
+  <a class="wordmark" href="index.html">Deep<b>Mist</b>&nbsp;AI</a>
+  <nav>
+    <a href="index.html#work">Work</a>
+    <a href="hooks.html">Hooks</a>
+    <a href="index.html#services">Services</a>
+    <a href="free-audit.html">Free Audit</a>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap intro">
+    <p class="crumb"><a href="index.html#work">The demo reel</a> &nbsp;/&nbsp; Kibo breakdown</p>
+    <div class="eyebrow">Production Breakdown</div>
+    <h1>How we made the KIBO ad <em>sound-first</em></h1>
+    <p class="lede">This is a full breakdown of one 10-second ad: the brief, the opening line, the stack, and the finished video. KIBO is a fictional brand we invented; this is a self-initiated spec ad, not client work. Food and drink is judged on texture and sound in the first second, so we led with both.</p>
+    <div class="specpill"><b>Kibo is a brand we invented.</b> Self-initiated demo, not client work.</div>
+
+    <div class="stage">
+      <div>
+        <div class="player">
+          <video src="media/kibo-demo.mp4" poster="media/kibo-poster.jpg" controls playsinline preload="none"></video>
+        </div>
+        <p class="playercap">The finished ad. 10 seconds, 9:16, sound on. Every frame AI-generated. The &ldquo;portfolio demo&rdquo; watermark is ours &mdash; client deliveries ship clean.</p>
+      </div>
+      <div class="brief">
+        <h3>The brief we wrote ourselves</h3>
+        <dl>
+          <div class="row"><dt>Product</dt><dd>KIBO, a fictional matcha starter kit.</dd></div>
+          <div class="row"><dt>Audience</dt><dd>People ready to quit an expensive latte habit.</dd></div>
+          <div class="row"><dt>Constraint</dt><dd>Ten seconds, one quiet kitchen shot, no filmed footage.</dd></div>
+          <div class="row"><dt>Format</dt><dd>Close kitchen prep · voiceover</dd></div>
+          <div class="row"><dt>Niche</dt><dd>Food &amp; Beverage</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="hookblock">
+      <h3>The opening line</h3>
+      <p class="hookline">&ldquo;POV: you quit your $7 latte habit.&rdquo;</p>
+      <p class="hookwhy">The opening line is 'POV: you quit your $7 latte habit.' It never mentions matcha. Instead it hands the viewer an identity they already want, someone who escaped an overpriced routine, and lets the drink on screen be the proof. The product arrives as the answer, not the pitch.</p>
+      <p class="formatwhy"><b>Why this format.</b> Food sells through appetite, which lives in texture and sound before any claim registers. So we kept the camera close on the prep and let a voiceover carry the line, with no face competing with the matcha for attention.</p>
+    </div>
+
+    <div class="built">
+      <h3>How it was built</h3>
+      <ol class="steplist">
+        <li><span class="sn">01</span><div><h4>Hero still</h4><p>One image, generated with Nano Banana Pro at 9:16. Framed like a phone photo rather than a product shot: the item in hand, the brand name legible on the label, light coming from somewhere plausible.</p></div></li>
+        <li><span class="sn">02</span><div><h4>Motion and voice</h4><p>That still becomes frame one. Seedance 2.0 takes it to ten seconds of 720p video and generates the audio in the same pass. Spoken lines are written into the prompt, so the delivery is lip-synced from the start instead of dubbed on afterwards.</p></div></li>
+        <li><span class="sn">03</span><div><h4>Check before keep</h4><p>Nothing survives because it looked fine as a thumbnail. We read the stream data with ffprobe, build a contact sheet of frames with ffmpeg, and compare the spoken audio against the script that was written. Takes that drift from the brief get regenerated, not patched.</p></div></li>
+        <li><span class="sn">04</span><div><h4>Finish</h4><p>The approved take is cut and packaged with ffmpeg for wherever it will run. Vertical for Reels and TikTok here; the same take can be reframed for feed or landscape if the brief asks.</p></div></li>
+      </ol>
+      <div class="specgrid">
+        <div class="spec"><dt>Format</dt><dd>9:16 vertical, 1280&#215;720 source</dd></div>
+        <div class="spec"><dt>Runtime</dt><dd>10.0 seconds, audio included</dd></div>
+        <div class="spec"><dt>Stills</dt><dd>Nano Banana Pro</dd></div>
+        <div class="spec"><dt>Motion &amp; voice</dt><dd>Seedance 2.0, image-to-video</dd></div>
+        <div class="spec"><dt>Assembly &amp; QA</dt><dd>ffmpeg / ffprobe</dd></div>
+        <div class="spec"><dt>On location</dt><dd>Nobody. No crew, no samples shipped</dd></div>
+      </div>
+    </div>
+
+    <div class="craft">
+      <h3>What to watch for</h3>
+      <div class="pts">
+        <div class="pt"><h4>The prep sound</h4><p>Audio is generated in the same pass as the picture, so the whisking and pouring carry the appetite cue instead of music laid underneath.</p></div>
+        <div class="pt"><h4>The close framing</h4><p>The shot stays tight on the powder, the water, and the whisk, so the texture of the matcha reads before any word is spoken.</p></div>
+        <div class="pt"><h4>The kit on frame</h4><p>The matcha box and the whisk stay in frame with the KIBO name visible, so the kit reads as a real object, not a prop.</p></div>
+      </div>
+    </div>
+
+    <div class="honesty">
+      <h3>What this page is not</h3>
+      <p>Every frame here is AI-generated, and KIBO is a brand we invented for this demo. We claim no view or sales numbers, because this ad was never run as paid media. With a real product we'd shoot around the actual kit and a real pour.</p>
+      <p>We have no published reviews yet, so we are not going to borrow credibility we haven't earned. <strong>No client names, no engagement numbers, no invented case studies.</strong> What we can show you is the work and the method, in full, and let you judge whether it clears your bar.</p>
+    </div>
+
+    <div class="more">
+      <h3>More breakdowns and free hooks</h3>
+      <div class="nichelinks">
+      <a class="nichelink" href="made-aurelia-skincare-ad.html">Aurelia · Skincare</a>
+      <a class="nichelink" href="made-pawse-pet-ad.html">Pawse · Pets</a>
+        <a class="nichelink" href="hooks-food-beverage.html">Food &amp; Beverage hooks</a>
+        <a class="nichelink all" href="hooks.html">The full free hook library</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap close">
+    <h2>We'll write three hooks <em>for your food brand</em>, free.</h2>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="free-audit.html">Get 3 custom hooks — free</a>
+      <span class="alt">Or skip ahead and <a href="https://www.fiverr.com/bram000">brief us on Fiverr</a> to have the whole ad built — script, presenter and edit.</span>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div><div class="fm">Deep Mist AI FZE LLC</div>Ajman Media City Free Zone, United Arab Emirates<br>Licensed media production company · Est. 2019</div>
+  <div style="text-align:right"><div class="fm">Honestly synthetic.</div>Every frame AI-generated. Every claim human-checked.<br>© 2026 Deep Mist AI</div>
+</footer>
+<script src="js/analytics.js" defer></script>
+</body>
+</html>
