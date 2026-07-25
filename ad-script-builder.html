@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Ad Script Builder — Hook, Shot List &amp; Prompt | Deep Mist AI</title>
+<meta name="description" content="Turn what you sell and a category into a short vertical AI ad script. Get a hook, a shot outline, and a paste-ready prompt. Free, with no signup.">
+<link rel="canonical" href="https://deepmiststudio.com/ad-script-builder.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://deepmiststudio.com/ad-script-builder.html">
+<meta property="og:title" content="Free AI Ad Script Builder — Hook, Shot List &amp; Prompt | Deep Mist AI">
+<meta property="og:description" content="Turn what you sell and a category into a short vertical AI ad script. Get a hook, a shot outline, and a paste-ready prompt. Free, with no signup.">
+<meta property="og:image" content="https://deepmiststudio.com/media/og/og-ad-script-builder.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Free AI ad script builder by Deep Mist AI">
+<meta property="og:site_name" content="Deep Mist AI">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AI Ad Script Builder — Hook, Shot List &amp; Prompt | Deep Mist AI">
+<meta name="twitter:description" content="Turn what you sell and a category into a short vertical AI ad script. Get a hook, a shot outline, and a paste-ready prompt. Free, with no signup.">
+<meta name="twitter:image" content="https://deepmiststudio.com/media/og/og-ad-script-builder.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0d0e;
+  --mist:#c9d4d2;
+  --mist-dim:#77837f;
+  --glow:#8ff0d4;
+  --warm:#f0c98f;
+  --line:rgba(201,212,210,.14);
+  --serif:"Fraunces",serif;
+  --sans:"Archivo",sans-serif;
+  --wide:"Archivo Expanded",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--mist);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--glow);color:var(--ink)}
+
+.fog{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.fog i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+.fog i:nth-child(1){width:60vw;height:60vw;left:-20vw;top:-25vw;background:radial-gradient(circle,#1d3a33,transparent 65%)}
+.fog i:nth-child(2){width:50vw;height:50vw;right:-18vw;top:20vh;background:radial-gradient(circle,#15272e,transparent 65%)}
+main,header.site,footer.site{position:relative;z-index:2}
+
+header.site{display:flex;justify-content:space-between;align-items:center;padding:28px clamp(20px,5vw,64px);border-bottom:1px solid var(--line)}
+.wordmark{font-family:var(--wide);font-weight:600;font-size:14px;letter-spacing:.34em;color:var(--mist);text-decoration:none;text-transform:uppercase}
+.wordmark b{color:var(--glow);font-weight:600}
+nav a{color:var(--mist-dim);text-decoration:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-left:clamp(16px,3vw,40px);transition:color .3s}
+nav a:hover{color:var(--glow)}
+
+.btn{display:inline-block;padding:16px 34px;border-radius:100px;font-family:var(--wide);font-size:13px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:transform .3s,box-shadow .3s;border:none;cursor:pointer}
+.btn-solid{background:var(--glow);color:var(--ink);font-weight:600}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(143,240,212,.25)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+.intro{padding:clamp(56px,9vh,96px) 0 0}
+.crumb{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist-dim);margin-bottom:26px}
+.crumb a{color:var(--mist-dim);text-decoration:none;border-bottom:1px solid var(--line);transition:color .3s,border-color .3s}
+.crumb a:hover{color:var(--glow);border-color:var(--glow)}
+.eyebrow{font-family:var(--wide);font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--glow);margin-bottom:34px;display:flex;align-items:center;gap:16px}
+.eyebrow::before{content:"";display:block;width:44px;height:1px;background:var(--glow)}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(36px,5.6vw,72px);line-height:1.05;letter-spacing:-.015em;color:#e9efee;max-width:17ch}
+h1 em{font-style:italic;font-weight:400;color:var(--glow)}
+.lede{max-width:640px;margin-top:32px;font-size:clamp(16px,1.5vw,19px);color:var(--mist-dim)}
+.specpill{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:10px 20px;border:1px solid rgba(240,201,143,.32);border-radius:100px;font-size:13px;color:var(--warm);letter-spacing:.04em}
+.specpill b{font-weight:500;color:var(--mist)}
+h3.sec{font-family:var(--wide);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#e9efee;margin-bottom:20px}
+
+/* ---------- the tool ---------- */
+.tool{margin-top:clamp(44px,6vh,72px);border:1px solid rgba(143,240,212,.22);border-radius:24px;padding:clamp(26px,3.4vw,40px);background:linear-gradient(160deg,rgba(143,240,212,.06),transparent 62%)}
+.tool .stepno{font-family:var(--wide);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--glow);margin-bottom:14px;display:block}
+.frow{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.field label{display:block;font-family:var(--wide);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mist-dim);margin-bottom:10px}
+.field input,.field select{width:100%;padding:15px 18px;border-radius:12px;border:1px solid var(--line);background:rgba(11,13,14,.6);color:#e9efee;font-family:var(--sans);font-size:15.5px;transition:border-color .3s}
+.field input:focus,.field select:focus{outline:none;border-color:rgba(143,240,212,.55)}
+.field input::placeholder{color:#5d6764}
+.field select option{background:#0b0d0e;color:#e9efee}
+.hint{margin-top:9px;font-size:13px;color:var(--mist-dim)}
+
+.fmts{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.fmt{text-align:left;padding:18px 20px;border-radius:16px;border:1px solid var(--line);background:rgba(201,212,210,.03);color:var(--mist-dim);font-family:var(--sans);font-size:13.5px;line-height:1.5;cursor:pointer;transition:border-color .3s,background .3s,color .3s}
+.fmt b{display:block;font-family:var(--wide);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#e9efee;margin-bottom:9px;font-weight:600;line-height:1.4}
+.fmt:hover{border-color:rgba(143,240,212,.35)}
+.fmt.on{border-color:rgba(143,240,212,.6);background:rgba(143,240,212,.07)}
+.fmt.on b{color:var(--glow)}
+
+.toolbar{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.gbtn{padding:13px 24px;border-radius:100px;border:1px solid var(--line);background:transparent;color:var(--mist);font-family:var(--wide);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:border-color .3s,color .3s}
+.gbtn:hover{border-color:rgba(143,240,212,.5);color:var(--glow)}
+.gbtn.primary{background:var(--glow);color:var(--ink);border-color:var(--glow);font-weight:600}
+.gbtn.primary:hover{color:var(--ink);box-shadow:0 12px 34px rgba(143,240,212,.22)}
+.counter{font-size:13px;color:var(--mist-dim)}
+
+/* ---------- output ---------- */
+.out{margin-top:clamp(40px,5vh,64px)}
+.card{border:1px solid var(--line);border-radius:20px;padding:clamp(24px,3vw,34px);background:linear-gradient(160deg,rgba(201,212,210,.035),transparent 60%)}
+.card + .card{margin-top:20px}
+.card h4{font-family:var(--wide);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--glow);margin-bottom:18px}
+.hookline{font-family:var(--serif);font-weight:300;font-size:clamp(22px,3vw,34px);line-height:1.28;color:#e9efee}
+.hookmeta{margin-top:16px;font-size:13.5px;color:var(--mist-dim)}
+.hookmeta a{color:var(--mist);text-decoration:none;border-bottom:1px solid var(--line)}
+.hookmeta a:hover{color:var(--glow);border-color:var(--glow)}
+
+.shot{display:grid;grid-template-columns:minmax(96px,auto) 1fr;gap:22px;padding:20px 0;border-top:1px solid var(--line)}
+.shot:first-of-type{border-top:none;padding-top:4px}
+.stime{font-family:var(--wide);font-size:11.5px;letter-spacing:.14em;color:var(--warm);padding-top:3px;white-space:nowrap}
+.srole{font-family:var(--wide);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#e9efee;margin-bottom:8px}
+.stext{font-size:15px;color:var(--mist);margin-bottom:8px}
+.shint{font-size:13.5px;color:var(--mist-dim)}
+.spoken{margin-top:10px;padding:12px 16px;border-left:2px solid rgba(143,240,212,.45);background:rgba(143,240,212,.04);border-radius:0 10px 10px 0;font-size:14.5px;color:#e9efee}
+
+pre.prompt{margin-top:4px;padding:22px;border-radius:14px;border:1px solid var(--line);background:rgba(11,13,14,.66);color:#dfe8e6;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.75;white-space:pre-wrap;word-break:break-word;overflow-x:auto}
+pre.prompt b{color:var(--glow);font-weight:600}
+.pnote{margin-top:16px;font-size:13.5px;color:var(--mist-dim);border-left:2px solid rgba(240,201,143,.4);padding-left:16px}
+.crow2{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.copied{font-size:13px;color:var(--glow);opacity:0;transition:opacity .25s}
+.copied.on{opacity:1}
+.watchout{margin-top:20px;padding:18px 20px;border:1px solid rgba(240,201,143,.26);border-radius:14px;background:rgba(240,201,143,.05);font-size:14.5px;color:var(--mist)}
+.watchout b{display:block;font-family:var(--wide);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--warm);margin-bottom:8px;font-weight:600}
+
+.howto{margin-top:clamp(52px,7vh,84px)}
+.howto ol{margin-left:20px;display:grid;gap:14px;max-width:760px}
+.howto li{color:var(--mist-dim);font-size:15.5px}
+.howto li::marker{color:var(--glow);font-family:var(--wide);font-size:13px}
+
+.honesty{margin-top:clamp(52px,7vh,84px);border:1px solid var(--line);border-radius:18px;padding:34px 30px;background:linear-gradient(160deg,rgba(143,240,212,.045),transparent 65%)}
+.honesty h3{font-family:var(--wide);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#e9efee;margin-bottom:16px}
+.honesty p{color:var(--mist-dim);font-size:15px;max-width:780px}
+.honesty p + p{margin-top:14px}
+.honesty strong{color:var(--mist);font-weight:500}
+
+.more{margin-top:clamp(52px,7vh,84px)}
+.more p{max-width:700px;color:var(--mist-dim);font-size:15.5px;margin-bottom:20px}
+.nichelinks{display:flex;flex-wrap:wrap;gap:12px}
+.nichelink{display:inline-block;padding:12px 22px;border:1px solid var(--line);border-radius:100px;color:var(--mist);text-decoration:none;font-size:14px;transition:border-color .3s,color .3s}
+.nichelink:hover{border-color:rgba(143,240,212,.45);color:var(--glow)}
+.nichelink.all{border-color:rgba(143,240,212,.3);color:var(--glow)}
+
+.close{padding:clamp(56px,8vh,96px) 0 clamp(70px,10vh,110px)}
+.close h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,4.4vw,52px);line-height:1.1;color:#e9efee;max-width:18ch}
+.close h2 em{font-style:italic;font-weight:400;color:var(--glow)}
+.cta-row{margin-top:40px;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.cta-row .alt{font-size:14px;color:var(--mist-dim);max-width:380px}
+.cta-row .alt a{color:var(--glow);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .3s}
+.cta-row .alt a:hover{border-color:var(--glow)}
+
+footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:var(--mist-dim);font-size:13px}
+footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;color:var(--mist);margin-bottom:10px}
+
+.nojs{border:1px solid rgba(240,201,143,.3);border-radius:16px;padding:22px 24px;margin-top:26px;color:var(--mist);font-size:15px}
+.nojs a{color:var(--glow)}
+
+@media(max-width:640px){
+  nav a:not(:last-child){display:none}
+  .shot{grid-template-columns:1fr;gap:8px}
+}
+</style>
+</head>
+<body>
+<div class="fog"><i></i><i></i></div>
+
+<header class="site">
+  <a class="wordmark" href="index.html">Deep<b>Mist</b>&nbsp;AI</a>
+  <nav>
+    <a href="index.html#work">Work</a>
+    <a href="hooks.html">Hooks</a>
+    <a href="index.html#services">Services</a>
+    <a href="free-audit.html">Free Audit</a>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap intro">
+    <p class="crumb"><a href="index.html">Deep Mist AI</a> &nbsp;/&nbsp; Free tool</p>
+    <div class="eyebrow">Free · No signup</div>
+    <h1>Turn what you sell into <em>a working ad script</em> right here, for free.</h1>
+    <p class="lede">Type in what you sell and pick a category, and the page assembles an opener, a short vertical shot outline, and a prompt you can paste into any AI video tool. Take whatever is useful and leave the rest. No account, no email, no charge.</p>
+    <div class="specpill"><b>107 hooks, 10 categories, 3 shot formats.</b> Nothing to sign up for.</div>
+
+    <noscript>
+      <div class="nojs">This builder assembles everything in your browser, so it needs JavaScript switched on. If you would rather not, the full hook bank is plain text on the <a href="hooks.html">free hook library</a> &mdash; same lines, no tool required.</div>
+    </noscript>
+
+    <section class="tool" aria-labelledby="toolh">
+      <h3 class="sec" id="toolh">Build a script</h3>
+
+      <span class="stepno">Step one &mdash; your product</span>
+      <div class="frow">
+        <div class="field">
+          <label for="product">What are you selling?</label>
+          <input id="product" type="text" autocomplete="off" spellcheck="false" placeholder="e.g. a cold-brew coffee concentrate">
+          <p class="hint">Typed here only. It never leaves your browser.</p>
+        </div>
+        <div class="field">
+          <label for="niche">Category</label>
+          <select id="niche">
+          <option value="beauty-skincare">Beauty &amp; skincare</option>
+          <option value="fitness-health">Fitness &amp; health</option>
+          <option value="food-beverage">Food &amp; beverage</option>
+          <option value="fashion-accessories">Fashion &amp; accessories</option>
+          <option value="tech-gadgets">Tech &amp; gadgets</option>
+          <option value="home-kitchen">Home &amp; kitchen</option>
+          <option value="pets">Pets</option>
+          <option value="kids-baby">Kids &amp; baby</option>
+          <option value="perfume-oud">Perfume &amp; oud</option>
+          <option value="generic">Something else</option>
+          </select>
+          <p class="hint">Picks the hooks, the setting and the shot list.</p>
+        </div>
+      </div>
+
+      <span class="stepno" style="margin-top:30px">Step two &mdash; how the shot is framed</span>
+      <div class="fmts" role="radiogroup" aria-label="Shot format">
+          <button type="button" class="fmt on" data-fmt="ugc" role="radio" aria-checked="true"><b>UGC selfie — someone talking to camera</b><span>The workhorse. Use when the hook is a spoken line and you want a face saying it.</span></button>
+          <button type="button" class="fmt" data-fmt="hands" role="radio" aria-checked="false"><b>Hands-on demo — no talking head</b><span>Use when the hook is about what the product does rather than who is using it. Cheapest to get right, because nobody has to speak to camera.</span></button>
+          <button type="button" class="fmt" data-fmt="hero" role="radio" aria-checked="false"><b>Product hero — no people at all</b><span>Use as an opening frame, an end card, or the whole ad when the product is the visual. The safest of the three, since neither faces nor hands can misrender.</span></button>
+      </div>
+
+      <div class="toolbar">
+        <button type="button" class="gbtn primary" id="again">Another hook</button>
+        <button type="button" class="gbtn" id="copyall">Copy the whole script</button>
+        <span class="counter" id="counter"></span>
+        <span class="copied" id="copiedall">Copied</span>
+      </div>
+    </section>
+
+    <div class="out" id="out" aria-live="polite">
+      <div class="card">
+        <h4>Your opening line</h4>
+        <p class="hookline" id="hookline"></p>
+        <p class="hookmeta" id="hookmeta"></p>
+      </div>
+
+      <div class="card">
+        <h4>The shot list &mdash; 10 seconds, vertical</h4>
+        <div id="shots"></div>
+      </div>
+
+      <div class="card">
+        <h4>The prompt &mdash; paste into any AI video tool</h4>
+        <pre class="prompt" id="prompt"></pre>
+        <div class="crow2">
+          <button type="button" class="gbtn" id="copyprompt">Copy prompt</button>
+          <span class="copied" id="copiedprompt">Copied</span>
+          <span class="counter">9:16 · 5s per clip · 720P draft, 1080P final</span>
+        </div>
+        <p class="pnote" id="pnote"></p>
+        <div class="watchout"><b>What goes wrong in this category</b><span id="watchout"></span></div>
+      </div>
+    </div>
+
+    <div class="howto">
+      <h3 class="sec">Getting a usable clip out of it</h3>
+      <ol>
+        <li>Copy the prompt the page assembles and paste it into whatever AI video tool you already use, then keep the generation settings on vertical short format.</li>
+        <li>Drop the opener line over the opening shot as on-screen text or voiceover, and trim the clip so the spoken hook lands before the viewer scrolls past.</li>
+        <li>Keep each shot focused on a clear idea, in the order the page gives you, and cut anything that does not show the object doing what the script promises.</li>
+        <li>Render the finished cut, watch it through on a phone with the sound both on and off, and only then decide what to change before you post it anywhere.</li>
+      </ol>
+    </div>
+
+    <div class="honesty">
+      <h3>Straight about what this is</h3>
+      <p>The openers on this page are written lines we would use ourselves, not claims about anyone's results, and a hook is only as good as the cut it sits inside. The prompt is a starting point: feed it to any AI video tool, look at what comes back, and rewrite what does not work. Everything we deliver to clients is made with AI tools, and we mark it that way on the work itself. We disclose because it is the honest way to run a studio, not because we are hedging.</p>
+      <p><strong>We have no published reviews and no client results to quote.</strong> There are no invented case studies, engagement numbers or client logos anywhere on this site, and there will not be until they are real.</p>
+    </div>
+
+    <div class="more">
+      <h3 class="sec">The full hook bank, by category</h3>
+      <p>The builder hands you one line at a time. If you would rather read every hook we have written for your category and pick your own, each list is published in full, free, with no email gate.</p>
+      <div class="nichelinks">
+        <a class="nichelink" href="hooks-beauty-skincare.html">Beauty &amp; skincare</a>
+        <a class="nichelink" href="hooks-fitness-health.html">Fitness &amp; health</a>
+        <a class="nichelink" href="hooks-food-beverage.html">Food &amp; beverage</a>
+        <a class="nichelink" href="hooks-fashion-accessories.html">Fashion &amp; accessories</a>
+        <a class="nichelink" href="hooks-tech-gadgets.html">Tech &amp; gadgets</a>
+        <a class="nichelink" href="hooks-home-kitchen.html">Home &amp; kitchen</a>
+        <a class="nichelink" href="hooks-pets.html">Pets</a>
+        <a class="nichelink" href="hooks-kids-baby.html">Kids &amp; baby</a>
+        <a class="nichelink" href="hooks-perfume-oud.html">Perfume &amp; oud</a>
+        <a class="nichelink all" href="hooks.html">All 107 hooks</a>
+      </div>
+    </div>
+
+    <div class="more">
+      <h3 class="sec">Or watch us do it</h3>
+      <p>Three of our own demo ads are taken apart shot by shot &mdash; the brief, the opening line, why that format, and what we had to fix. Same method this tool just handed you.</p>
+      <div class="nichelinks">
+        <a class="nichelink" href="made-aurelia-skincare-ad.html">AURELIA &mdash; skincare</a>
+        <a class="nichelink" href="made-kibo-matcha-ad.html">KIBO &mdash; matcha</a>
+        <a class="nichelink" href="made-pawse-pet-ad.html">PAWSE &mdash; pet treats</a>
+        <a class="nichelink" href="ai-ugc-vs-hiring-a-creator.html">What this costs vs hiring a creator</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap close">
+    <h2>We can build the finished ad for you.</h2>
+    <p class="lede">The same tools and the same editing discipline behind this page go into the ads we deliver, so handing the work to us just means someone does it daily. If you would rather we make it, tell us what you sell and we will take it from there.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="free-audit.html">Get 3 custom hooks &mdash; free</a>
+      <span class="alt">Or send the product straight over and <a href="https://www.fiverr.com/bram000">have the ad built on Fiverr</a> &mdash; script, presenter, voice and edit.</span>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div><div class="fm">Deep Mist AI FZE LLC</div>Ajman Media City Free Zone, United Arab Emirates<br>Licensed media production company &middot; Est. 2019</div>
+  <div style="text-align:right"><div class="fm">Honestly synthetic.</div>Every frame AI-generated. Every claim human-checked.<br>&copy; 2026 Deep Mist AI</div>
+</footer>
+
+<script>
+/* Deep Mist AI — ad script builder. Everything runs here, in the visitor's browser.
+   No network calls, no storage, nothing sent anywhere. */
+(function () {
+  "use strict";
+  var DATA = {"niches":[{"slug":"beauty-skincare","label":"Beauty & skincare","prose":"beauty and skincare","page":"hooks-beauty-skincare.html","hooks":["I almost swiped past this until I saw what it did on day three.","Stop scrolling if your skin looks tired in every single selfie.","Three things happened when I swapped my whole routine for one bottle.","I bought this expecting nothing and my group chat won't stop talking about it.","The one skincare step everyone forgets — and why it's quietly aging you.","Don't buy another serum until you check this one ingredient.","I filmed my face every morning for a week to see if this was real.","Here's what nobody tells you about glass-skin in your thirties.","I tested this so you don't have to — here's the honest verdict.","That \"dull skin\" feeling isn't your fault. It's this one missing step.","Two pumps, ten seconds, and I'm out the door looking awake.","I finally found the step that made my makeup actually sit flat."],"presenter":"a person filming themselves at a bathroom mirror, holding {{product}} up near the jaw, bare-faced and unhurried","subject":"a person pressing {{product}} into damp skin at a lit mirror, fingers moving from cheek to cheek","environment":"a bathroom vanity, a soft towel folded, an open tap, and a few bottles pushed to one side","lighting":"soft daylight from a side window, falling across the cheek without hard shadow","motion_detail":"the thumb spreading {{product}} in a slow upward stroke across the jaw","shot_hook":"Open on a close shot of the cap being unscrewed or the pump being depressed with the hook line spoken over it, holding {{product}} as what the eye lands on.","shot_proof":"Cut to skin in motion, the cream sheering out to a thin film or a fingertip lifting to show the texture, so the claim reads as something a camera actually caught.","shot_payoff":"End on the bottle standing label-forward on the vanity with the line spoken cleanly, and leave the viewer with a clear step toward learning more.","note":"The mistake in this category is the misted lens and the over-glowing complexion that reads as fake before anything is shown. Keep the skin real, let a pore stay visible, and let the texture of the cream carry the shot rather than a filter."},{"slug":"fitness-health","label":"Fitness & health","prose":"fitness and health","page":"hooks-fitness-health.html","hooks":["I cancelled my gym membership after I found this 12-minute routine.","Stop doing crunches — this is what actually flattens the lower belly.","The reason you're exhausted by 3pm isn't caffeine. It's this.","I tracked my energy for 30 days on this — here's what changed.","Don't buy another protein powder until you read the back of the tub.","Three mobility moves that fixed my back after years at a desk.","I was the person who hated running. This changed it in a week.","Here's the habit that quietly added 90 minutes to my morning.","If you sit all day, your hip flexors are doing this — and it's bad.","The supplement everyone's been whispering about — and what's actually in it.","I tried the cold-shower thing for 21 days. Honest results only."],"presenter":"a gym-goer catching their breath between sets, holding {{product}} up toward the phone","subject":"a gym-goer pulling {{product}} from a bag on a bench and tipping a scoop into a shaker","environment":"a weights floor under rubber matting, a racked barbell, and a water bottle sweating on the ground","lighting":"overhead gym light with a hard edge, the kind that picks out sweat and motion","motion_detail":"the wrist shaking the shaker until {{product}} dissolves and the liquid turns clear","shot_hook":"Start on the scoop hitting the water as the hook drops, framing the hands and the shaker so {{product}} faces the lens right away.","shot_proof":"Move to the shake going down or the cap being cracked mid-set, showing the product being used in the setting it belongs to rather than posed on a shelf.","shot_payoff":"Close on the tub lid snapped shut and set down, with a clear spoken cue to go get started, the label turned toward the camera.","note":"This category dies when the ad sells a body transformation instead of the act of training. Show the scoop, the mix, and the lift, and leave any claim about what the product does to a body out of the frame entirely."},{"slug":"food-beverage","label":"Food & beverage","prose":"food and beverage","page":"hooks-food-beverage.html","hooks":["I replaced my morning coffee with this for a week. Here's what happened.","Stop buying the expensive one — this tastes identical for half the price.","Three things in my fridge that completely changed how I snack.","The reason your homemade version never tastes like the restaurant.","I brought this to a dinner and got asked for the recipe three times.","Don't microwave this — and the one thing you should do instead.","Here's the 30-second snack I make when I'm too tired to cook.","I thought \"healthy\" meant boring until I found this in the aisle.","The grocery-store swap that cut my sugar intake in half.","Pour this, not that — the one drink your evenings are missing.","I filmed my fridge before and after this one change. Wild."],"presenter":"a host talking to a propped phone across a kitchen table, {{product}} set down in front of them","subject":"a host tilting {{product}} into a glass with ice while condensation runs down the side","environment":"a wooden table near a window, a plate of food pushed back, a linen napkin folded nearby","lighting":"warm low sun through the window, raking across the rim of the glass","motion_detail":"the pour slowing as {{product}} fills the glass and the ice shifts and settles","shot_hook":"Lead on the pour beginning while the hook is spoken, with the glass framed low so the rising liquid fills the bottom of the frame.","shot_proof":"Hold on the bubbles or the swirl or the moment the liquid meets the ice, giving the eye the texture that makes a person want to reach for the can.","shot_payoff":"Land on the glass lifted toward the lens with the label readable, and close with a plain line pointing the viewer to where it is sold.","note":"The repeated failure here is the over-styled table that looks like a catalogue and the food that never gets touched. Pour for real, let a drop spill, and shoot the moment of contact with the ice, because appetite lives in the mess."},{"slug":"fashion-accessories","label":"Fashion & accessories","prose":"fashion and accessories","page":"hooks-fashion-accessories.html","hooks":["I wore the same piece three ways and nobody clocked it was one item.","Stop buying throwaway bags — this one outlasted five of mine.","The $30 accessory that made every outfit look triple the price.","Three styling mistakes making your outfits look cheaper than they are.","I packed a week-long trip in one carry-on using only this.","Here's why your jewelry tarnishes — and the one fix that actually lasts.","Don't buy another pair of jeans until you check this detail.","The color everyone's wearing this season — and who it really flatters.","I thrifted this whole look for under $20. Guess which piece is the splurge.","One belt, five outfits — the styling hack I lean on every single week.","The fabric detail that tells you a shirt will outlast the trend."],"presenter":"someone at arm's length from the phone wearing {{product}}, turning the wrist toward the lens as they talk","subject":"fingers fastening {{product}} around a wrist, the clasp catching as it closes","environment":"matte fabric draped across a flat surface, a folded shirt, and a ring dish within reach","lighting":"a single soft lamp raking across the metal so the surface picks up the light","motion_detail":"the fingers rolling {{product}} to show the face and then letting it drop against the skin","shot_hook":"Frame the piece being drawn from a pouch or lifted into view with the hook playing, letting the material fill the screen before any wider shot.","shot_proof":"Catch the clasp, the hinge, or the facet turning under the light, the detail that justifies the price a buyer cannot yet feel in their hand.","shot_payoff":"Finish on the piece worn and shot at arm's length with the brand mark in view, and say plainly where to look at the full range.","note":"Accessories fail when the ad lingers on a model and forgets the object. Get close to the clasp, the stitch, and the weight of the metal turning in the light, and let the wearer be a hand and a wrist rather than a face selling a mood."},{"slug":"tech-gadgets","label":"Tech & gadgets","prose":"tech and gadgets","page":"hooks-tech-gadgets.html","hooks":["This $25 gadget replaced three apps on my phone.","Stop scrolling — this is the desk upgrade nobody talks about.","Three settings on this that pay for themselves within a week.","I moved my whole workflow onto one device. Here's why I'm not going back.","Don't buy a new phone until you try this $15 fix.","The reason your battery dies by noon — and the setting to change today.","Here's what I actually still use from the pile of \"smart home\" stuff I bought.","I tested the viral gadget so you don't have to waste your money.","One cable replaced my entire charging mess. Here's the exact one.","The keyboard feature that had me typing twice as fast inside a week.","If your Wi-Fi dies in one room, this is the $30 fix."],"presenter":"someone at a desk holding {{product}} up beside their face, thumb resting on the button","subject":"a thumb tapping the button on {{product}}, a status light waking in response","environment":"a clean desk, a closed laptop, a coiled cable, and a cup pushed aside","lighting":"cool desk lamp mixed with the glow of a screen, casting a soft key on the device","motion_detail":"the device being rotated so {{product}} shows its edge, then set down face-up","shot_hook":"Begin on the button press that wakes the device as the hook lands, framing the reaction of the light so the cause and effect read instantly.","shot_proof":"Show the screen or the indicator responding to the input, the proof that the thing does what the box promises, shot tight enough to read.","shot_payoff":"Leave the device centered on the desk with the brand facing out, and give the viewer a clear cue to go read the spec.","note":"Tech ads die when they list features over music and never show the product doing anything. Capture the button, the response, and the moment the status changes, and let the function prove itself on camera rather than in a caption."},{"slug":"home-kitchen","label":"Home & kitchen","prose":"home and kitchen","page":"hooks-home-kitchen.html","hooks":["I cleaned my whole kitchen in 15 minutes with one of these.","Stop scrubbing — this does the work while you sleep.","Three things in my kitchen I'd buy again tomorrow without thinking.","The reason your knives are dull — and the 60-second fix.","Don't buy another storage bin until you measure this first.","Here's the $12 tool that made my fridge feel twice as big.","I decluttered my pantry in one afternoon with this one system.","The gadget my mom laughed at — until she actually used it.","Two magnets replaced my entire junk drawer. Here's how.","The kitchen mistake that's quietly costing you 20 minutes a night."],"presenter":"a cook leaning in toward a propped phone, {{product}} on the counter beside them","subject":"a cook setting {{product}} on a stovetop and a flame licking up around the base","environment":"a kitchen counter, a wooden board, a chopped ingredient, and a cloth folded over the oven handle","lighting":"warm kitchen light with the overhead hood lamp on, softening the hard edge of the flame","motion_detail":"a wooden spoon stirring as {{product}} heats and steam begins to lift","shot_hook":"Set the pan on the flame while the hook is spoken, low and close so the heat and {{product}} meet in the opening beat.","shot_proof":"Keep the lens on the sizzle, the steam, or the moment the surface of the food shifts, the cue that tells a cook the tool is doing its job in a real kitchen.","shot_payoff":"Rest {{product}} on the counter, lifted or served with the logo turned to the lens, and a plain line sending the viewer to where it is stocked.","note":"Kitchen ads fail when the food looks plastic and the pan looks unused. Cook something real, let it spit and color in the pan, and show the tool mid-use with a streak on it, because a clean pan reads as a prop."},{"slug":"pets","label":"Pets","prose":"pet","page":"hooks-pets.html","hooks":["My dog stopped pulling on the leash in two walks. Here's what changed.","Stop buying this for your cat — most of them secretly hate it.","Three things I wish I'd bought the first week I brought my puppy home.","The reason your dog ignores commands — and the one word that fixes it.","I filmed my cat's reaction to five toys for a week. This one won.","Don't free-feed your pet until you watch this.","Here's the $10 thing that ended my dog's meltdowns at the door.","The grooming hack that cut the shedding in my house in half.","Everyone asks how my cat stays this calm. It comes down to one habit.","I switched my dog to fresh food for 30 days. Here's what actually changed."],"presenter":"an owner sitting on the floor with the dog beside them, holding {{product}} up to the phone","subject":"an open palm holding {{product}} out while a dog leans in to sniff before taking it","environment":"a living room floor, a folded rug, a toy nearby, and afternoon light across the boards","lighting":"low side window light, warm and soft, the kind that flatters fur without blowing it out","motion_detail":"the fingers releasing {{product}} as the dog's mouth closes gently around it","shot_hook":"Hold {{product}} at the dog's eye level with the hook playing, framing the approach so the animal's interest is what carries the frame.","shot_proof":"Stay on the chew, the swallow, or the tail, the reaction that shows the animal engaging with {{product}} rather than the bowl sitting untouched.","shot_payoff":"Place the bag or pouch label-out beside the dog, and say plainly where an owner can find the same kind.","note":"Pet ads fail when the animal is commanded to perform and the whole thing reads staged. Let the dog approach on its own, shoot the sniff and the take, and never imply it does anything to a body, because the camera only sees an animal engaging with an object."},{"slug":"kids-baby","label":"Kids & baby","prose":"kids and baby","page":"hooks-kids-baby.html","hooks":["The one thing that finally got my toddler to sleep past 5am.","Stop buying noisy toys — this kept mine busy for a full hour.","Three things I packed that saved my sanity on a six-hour flight.","The reason your baby fights the car seat — and the small fix.","I tried the gentle-parenting move for tantrums. Honest results only.","Don't buy another sippy cup until you check the lid seal.","Here's the $8 thing that stopped diaper changes being a fight.","The snack that quietly became my weapon against grocery-store meltdowns.","Everyone said I needed the $400 gadget. This $15 one worked better for us.","I logged my baby's sleep for a month. Here's what actually mattered."],"presenter":"a parent at arm's length from the phone with the child on one hip and {{product}} in the other hand","subject":"a parent guiding {{product}} into a small hand, steadying it as the child grips","environment":"a play mat on the floor beside a soft blanket, a few blocks, and a cushion close by","lighting":"soft window light diffused through a curtain, gentle on skin and without hard contrast","motion_detail":"the parent easing {{product}} into the child's grip as the small fingers close around it","shot_hook":"Bring {{product}} into the child's hand as the hook comes in, framing low so the exchange between adult and child fills the frame.","shot_proof":"Reveal the child holding, turning, or engaging with {{product}}, the moment that reads as real use rather than a prop posed for the shot.","shot_payoff":"Settle {{product}} in the child's hands with the brand visible, and give the parent a clear line on where to find it.","note":"This category fails when the ad implies the product is safe, educational, or good for development. Show only what the camera can see, a child holding and looking at the object, and leave any claim about the child out of the script."},{"slug":"perfume-oud","label":"Perfume & oud","prose":"perfume and oud","page":"hooks-perfume-oud.html","hooks":["One spray and my whole majlis smelled like this for hours.","Stop buying oud before you check where it actually came from.","The reason your perfume disappears by noon — and the fix the Gulf has always known.","Three stuffed dates in my fridge that turned dessert into an event.","Everyone at the gathering asked what I was wearing. Here it is.","I layered this over the bakhoor and the room went quiet.","Don't pay boutique prices for oud until you read this.","Here's the attar trick that lasts from fajr all the way to midnight.","The gift box that made me look like I'd spent triple on it.","Two sprays, not five — the mistake that quietly ruins expensive oud.","I wore this to a wedding and three people asked for the name before dessert."],"presenter":"someone seated in a majlis holding {{product}} near the collar, speaking to a propped phone","subject":"a hand lifting {{product}} from a majlis side table and bringing it toward the wrist","environment":"a majlis corner, a low cushioned seat, a brass tray, and a string of prayer beads","lighting":"warm lamplight with a single overhead bulb, golden and low, picking up the glass","motion_detail":"a thumb depressing the nozzle of {{product}} as a mist catches the light","shot_hook":"Lift the bottle from the table while the hook plays, framing the glass against the warm light so the liquid glows from the start.","shot_proof":"Frame the spray, the mist hanging, or the dab at the wrist, the moment that lets the viewer almost smell the room, held long enough to read.","shot_payoff":"Return the bottle to the tray, label toward the lens, with a plain line on where to find the scent.","note":"Oud and attar ads fail when they lean on stock luxury and forget the ritual. Show the bottle on the tray under the lamp and the spray catching the light, and let the setting carry the meaning rather than a borrowed idea of glamour."},{"slug":"generic","label":"Something else","prose":"any-product","page":"hooks.html","hooks":["I was today years old when I found out this existed.","Pause — if you own a phone, this one applies to you.","Three reasons I almost didn't buy this — and why I'm glad I did.","Don't buy this if you're not ready for a small obsession.","Here's the thing I didn't know I needed until I used it once.","The problem nobody talks about — and the simplest fix I've found.","I waited six months to try this. Wish it had been six days.","Two minutes of your day for one genuinely useful thing.","The 5-second test I run on every product before it earns counter space.","I'm not exaggerating — this is the one I keep telling people about."],"presenter":"someone holding {{product}} up beside their face, an arm's length from the phone","subject":"someone placing {{product}} on a clean surface and turning it so the face reads to the lens","environment":"a plain surface against a neutral backdrop, a soft cloth, and nothing competing for attention","lighting":"even soft light from the front, clean and flat enough to read every detail","motion_detail":"the fingers nudging {{product}} to bring the face into the light","shot_hook":"Center {{product}} as it is set down with the hook landing over it, so the object is the clear subject from the start.","shot_proof":"Turn {{product}}, open it, or handle it so a detail comes forward, the beat that gives the viewer a reason to keep watching past the opener.","shot_payoff":"Stand {{product}} clean against the backdrop with the mark readable, and point the viewer to where it can be found.","note":"The trap in a generic ad is filling the silence with effects to hide that nothing specific was said. Name what you sell, show it doing exactly that, and cut everything else, because a clear plain shot beats a busy frame."}],"formats":[{"key":"ugc","label":"UGC selfie — someone talking to camera","subject":"${presenter}, looking straight into the lens as if filming a selfie on a phone, mouth moving naturally in sync with the spoken hook","camera":"24–35mm equivalent, eye-level, locked selfie framing with a slight handheld micro-wobble, shallow depth of field, product kept in the lower third","motion":"${motion} — one small movement on the beat of the hook word; subtle natural breathing and head sway; no walking, no zoom","negative":"distorted hands, extra fingers, warped mouth, text rendered on the face, a phone visible in frame, stretched logo","model_note":"Faces are in shot, so this needs the full image-to-video model — the lighter one does not support them.","voice_note":"This shot has a face and a spoken line, so it needs a voice track and lip-sync. Generate the voiceover first, then pass it as the lip-sync reference."},{"key":"hands","label":"Hands-on demo — no talking head","subject":"${subject}, with the camera staying on the hands and the product rather than on anyone's face","camera":"35–50mm, high-angle top-down or a forty-five degree over-the-shoulder, locked or a gentle push-in across the clip","motion":"${motion} — executed in one clean take at natural speed, the product visibly doing the thing as a result","negative":"extra fingers, fused knuckles, the label blurring, motion blur on the action itself","model_note":"No talking head, so there is no lip-sync to get wrong. If no face enters the frame at all, the lighter and cheaper image-to-video model will handle it.","voice_note":"Nobody speaks to camera, so the hook lands as a voiceover or as on-screen text over the opening beat."},{"key":"hero","label":"Product hero — no people at all","subject":"${product} standing alone with the label facing camera and no people in frame","camera":"50mm macro, a slightly low hero angle, slow orbit around the product at tabletop height","motion":"smooth continuous camera rotation around a still product, with a little atmosphere drifting past for life — steam, mist, water droplets or dust motes, whichever suits it","negative":"warped label, melting text, floating shadows, background clutter","model_note":"Product-only shot, so the lighter and cheaper image-to-video model handles it.","voice_note":"Nobody is on screen, so the hook lands as a voiceover or as on-screen text over the first second."}]};
+  var SHOTS = [{"key":"hook","t":"0:00 – 0:03","role":"The hook","hint":"The line is spoken or shown here. If it does not land in the first second, nothing after it gets watched."},{"key":"proof","t":"0:03 – 0:07","role":"The proof","hint":"The moment that makes the opening line believable. Show it, do not say it again."},{"key":"payoff","t":"0:07 – 0:10","role":"The payoff","hint":"Product readable, one clear next step. No second ask."}];
+  var PLACEHOLDER = "[your product]";
+
+  var $ = function (id) { return document.getElementById(id); };
+  var state = { niche: DATA.niches[0].slug, fmt: DATA.formats[0].key, i: 0 };
+  var order = {};
+
+  // Deterministic-per-visit shuffle so two people don't always see the same first hook.
+  function shuffled(n) {
+    if (order[n]) return order[n];
+    var a = [];
+    for (var k = 0; k < niche(n).hooks.length; k++) a.push(k);
+    for (var j = a.length - 1; j > 0; j--) {
+      var r = Math.floor(Math.random() * (j + 1)), t = a[j]; a[j] = a[r]; a[r] = t;
+    }
+    order[n] = a;
+    return a;
+  }
+  function niche(slug) {
+    for (var k = 0; k < DATA.niches.length; k++) if (DATA.niches[k].slug === slug) return DATA.niches[k];
+    return DATA.niches[0];
+  }
+  function format(key) {
+    for (var k = 0; k < DATA.formats.length; k++) if (DATA.formats[k].key === key) return DATA.formats[k];
+    return DATA.formats[0];
+  }
+  function product() {
+    var v = $("product").value.trim();
+    return v ? v : PLACEHOLDER;
+  }
+  function fill(s) { return String(s).split("{{product}}").join(product()); }
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function currentHook() {
+    var n = niche(state.niche), ord = shuffled(state.niche);
+    return n.hooks[ord[state.i % ord.length]];
+  }
+
+  function promptText() {
+    var n = niche(state.niche), f = format(state.fmt);
+    var lines = [
+      ["Subject", fill(f.subject
+        .split("${subject}").join(n.subject)
+        .split("${presenter}").join(n.presenter)
+        .split("${product}").join("{{product}}"))],
+      ["Camera", f.camera],
+      ["Motion", fill(f.motion.split("${motion}").join(n.motion_detail))],
+      ["Lighting", n.lighting],
+      ["Environment", n.environment],
+      ["Negative", f.negative]
+    ];
+    var out = "";
+    for (var k = 0; k < lines.length; k++) out += lines[k][0] + ": " + lines[k][1] + "\n\n";
+    return out.replace(/\n+$/, "");
+  }
+
+  function fullScript() {
+    var n = niche(state.niche), f = format(state.fmt);
+    var s = "AD SCRIPT — " + product() + " (" + n.label + ")\n";
+    s += "Format: " + f.label + " · 10 seconds vertical · 9:16 · 5s per clip · 720P draft, 1080P final\n\n";
+    s += "HOOK (spoken or on screen):\n" + currentHook() + "\n\n";
+    s += "SHOT LIST\n";
+    for (var k = 0; k < SHOTS.length; k++) {
+      s += SHOTS[k].t + "  " + SHOTS[k].role + "\n  " + fill(n["shot_" + SHOTS[k].key]) + "\n";
+    }
+    s += "\nPROMPT\n" + promptText() + "\n\n";
+    s += "WATCH OUT: " + n.note + "\n\n";
+    s += "Hook from the free bank at https://deepmiststudio.com/hooks.html · built with https://deepmiststudio.com/ad-script-builder.html\n";
+    s += "Deep Mist AI — every frame AI-generated, and we say so.";
+    return s;
+  }
+
+  function render() {
+    var n = niche(state.niche), f = format(state.fmt), ord = shuffled(state.niche);
+    $("hookline").textContent = "\u201C" + currentHook() + "\u201D";
+    $("hookmeta").innerHTML = "From our free " + esc(n.prose) +
+      " hook bank &mdash; <a href=\"" + n.page + "\">read all " + n.hooks.length + "</a>. Written as an opener, not a claim about anyone&rsquo;s results.";
+    $("counter").textContent = "Hook " + ((state.i % ord.length) + 1) + " of " + ord.length + " · " + n.label;
+
+    var html = "";
+    for (var k = 0; k < SHOTS.length; k++) {
+      var sh = SHOTS[k];
+      html += '<div class="shot"><div class="stime">' + sh.t + '</div><div>' +
+        '<div class="srole">' + esc(sh.role) + '</div>' +
+        '<p class="stext">' + esc(fill(n["shot_" + sh.key])) + '</p>' +
+        '<p class="shint">' + esc(sh.hint) + '</p>' +
+        (sh.key === "hook" ? '<p class="spoken">Line: &ldquo;' + esc(currentHook()) + '&rdquo;</p>' : '') +
+        '</div></div>';
+    }
+    $("shots").innerHTML = html;
+
+    var p = promptText().split("\n");
+    var pre = "";
+    for (var m = 0; m < p.length; m++) {
+      var c = p[m].indexOf(":");
+      pre += (c > 0 && p[m].length ? "<b>" + esc(p[m].slice(0, c + 1)) + "</b>" + esc(p[m].slice(c + 1)) : esc(p[m])) + "\n";
+    }
+    $("prompt").innerHTML = pre.replace(/\n$/, "");
+    $("pnote").innerHTML = esc(f.model_note) + " " + esc(f.voice_note);
+    $("watchout").textContent = n.note;
+  }
+
+  function copy(text, badge) {
+    var done = function () {
+      badge.classList.add("on");
+      setTimeout(function () { badge.classList.remove("on"); }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { legacy(text, done); });
+    } else legacy(text, done);
+  }
+  function legacy(text, done) {
+    var t = document.createElement("textarea");
+    t.value = text; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.top = "-1000px";
+    document.body.appendChild(t); t.select();
+    try { document.execCommand("copy"); done(); } catch (e) { /* nothing else to try */ }
+    document.body.removeChild(t);
+  }
+
+  $("niche").addEventListener("change", function () { state.niche = this.value; state.i = 0; render(); });
+  $("product").addEventListener("input", render);
+  $("again").addEventListener("click", function () { state.i++; render(); });
+  $("copyprompt").addEventListener("click", function () { copy(promptText(), $("copiedprompt")); });
+  $("copyall").addEventListener("click", function () { copy(fullScript(), $("copiedall")); });
+
+  var btns = document.querySelectorAll(".fmt");
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener("click", function () {
+      Array.prototype.forEach.call(btns, function (o) { o.classList.remove("on"); o.setAttribute("aria-checked", "false"); });
+      b.classList.add("on"); b.setAttribute("aria-checked", "true");
+      state.fmt = b.getAttribute("data-fmt");
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
+<script src="js/analytics.js" defer></script>
+</body>
+</html>
