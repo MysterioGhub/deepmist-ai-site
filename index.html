@@ -169,23 +169,167 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
   .grid{grid-template-columns:repeat(2,1fr);gap:12px}
 }
 </style>
+
+<!-- schema:start -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Deep Mist AI",
-  "legalName": "Deep Mist AI FZE LLC",
-  "url": "https://deepmiststudio.com/",
-  "logo": "https://deepmiststudio.com/media/og/og-home.jpg",
-  "description": "AI video ad studio producing UGC-style product ads in English and Arabic. Every video is 100% AI-generated and disclosed as such.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Ajman Media City",
-    "addressCountry": "AE"
-  },
-  "sameAs": ["https://www.fiverr.com/bram000"]
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://deepmiststudio.com/#org",
+      "name": "Deep Mist AI",
+      "legalName": "Deep Mist AI FZE LLC",
+      "url": "https://deepmiststudio.com/",
+      "logo": "https://deepmiststudio.com/media/og/og-home.jpg",
+      "description": "AI video ad studio producing UGC-style product ads in English and Arabic. Every video is 100% AI-generated and disclosed as such.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ajman Media City",
+        "addressCountry": "AE"
+      },
+      "sameAs": [
+        "https://www.fiverr.com/bram000"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://deepmiststudio.com/#website",
+      "url": "https://deepmiststudio.com/",
+      "name": "Deep Mist AI",
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://deepmiststudio.com/#service-video",
+      "name": "AI video ad production",
+      "description": "UGC-style AI video ads for e-commerce brands, in English and Arabic. Scripted, generated and finished by AI, and disclosed as AI-generated.",
+      "serviceType": "Video advertising production",
+      "provider": {
+        "@id": "https://deepmiststudio.com/#org"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      },
+      "availableLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        },
+        {
+          "@type": "Language",
+          "name": "Arabic",
+          "alternateName": "ar"
+        }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Hook Tester",
+          "description": "1 UGC-style ad, up to 15 seconds, hook and script written for you, 1 revision round, 48-hour delivery.",
+          "price": "95",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "availableAtOrFrom": {
+            "@type": "Organization",
+            "name": "Fiverr",
+            "url": "https://www.fiverr.com/bram000"
+          },
+          "url": "https://www.fiverr.com/bram000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Ad Pack",
+          "description": "3 ads — one concept across three hooks, an A/B/C test-ready set, 2 revision rounds, 72-hour delivery.",
+          "price": "265",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "availableAtOrFrom": {
+            "@type": "Organization",
+            "name": "Fiverr",
+            "url": "https://www.fiverr.com/bram000"
+          },
+          "url": "https://www.fiverr.com/bram000"
+        },
+        {
+          "@type": "Offer",
+          "name": "Campaign Kit",
+          "description": "10 ads across up to 3 concepts, mixed formats with captions, 3 revision rounds, 5-day delivery.",
+          "price": "745",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "availableAtOrFrom": {
+            "@type": "Organization",
+            "name": "Fiverr",
+            "url": "https://www.fiverr.com/bram000"
+          },
+          "url": "https://www.fiverr.com/bram000"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://deepmiststudio.com/#service-ai",
+      "name": "AI automation, chatbots and landing pages",
+      "description": "Workflow automation, customer-service AI agents, product Q&A chatbots and AI-built landing pages. Quoted as a custom offer through Fiverr messaging.",
+      "serviceType": "AI implementation",
+      "provider": {
+        "@id": "https://deepmiststudio.com/#org"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "AI Automation & Agents",
+          "description": "Workflow automation and customer-service AI agents that answer from your own documents. Delivered in 4–7 days with setup files, a walkthrough video and handover notes.",
+          "price": "105",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "availableAtOrFrom": {
+            "@type": "Organization",
+            "name": "Fiverr",
+            "url": "https://www.fiverr.com/bram000"
+          },
+          "url": "https://www.fiverr.com/bram000"
+        },
+        {
+          "@type": "Offer",
+          "name": "AI Chatbots",
+          "description": "Product Q&A bot for web and messaging, trained on your catalogue, FAQs and policies. Delivered in 3–5 days with an embed snippet and a setup guide.",
+          "price": "145",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "availableAtOrFrom": {
+            "@type": "Organization",
+            "name": "Fiverr",
+            "url": "https://www.fiverr.com/bram000"
+          },
+          "url": "https://www.fiverr.com/bram000"
+        },
+        {
+          "@type": "Offer",
+          "name": "AI-Built Landing Pages",
+          "description": "A conversion page designed and built by AI, human-checked, responsive, with copy, layout and a ready-to-host file set. Delivered in 3–6 days.",
+          "price": "180",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "availableAtOrFrom": {
+            "@type": "Organization",
+            "name": "Fiverr",
+            "url": "https://www.fiverr.com/bram000"
+          },
+          "url": "https://www.fiverr.com/bram000"
+        }
+      ]
+    }
+  ]
 }
 </script>
+<!-- schema:end -->
 </head>
 <body>
 <div class="fog"><i></i><i></i><i></i></div>
