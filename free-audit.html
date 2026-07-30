@@ -6,6 +6,9 @@
 <title>Free 3-Hook Audit — Deep Mist AI</title>
 <meta name="description" content="Send us your product link and we'll reply with 3 free scroll-stopping hook ideas for your ads. AI-drafted, human-checked. No obligation.">
 <link rel="canonical" href="https://deepmiststudio.com/free-audit.html">
+<link rel="alternate" hreflang="en" href="https://deepmiststudio.com/free-audit.html">
+<link rel="alternate" hreflang="ar" href="https://deepmiststudio.com/free-audit-ar.html">
+<link rel="alternate" hreflang="x-default" href="https://deepmiststudio.com/free-audit.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://deepmiststudio.com/free-audit.html">
 <meta property="og:title" content="Free 3-Hook Audit — Deep Mist AI">
@@ -16,6 +19,7 @@
 <meta property="og:image:alt" content="3 free hook ideas for your product — AI-drafted, human-checked, no signup.">
 <meta property="og:site_name" content="Deep Mist AI">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Free 3-Hook Audit — Deep Mist AI">
 <meta name="twitter:description" content="Send a product link, get 3 free scroll-stopping hook ideas back. AI-drafted, human-checked. No obligation.">
@@ -102,7 +106,15 @@ h1 em{font-style:italic;font-weight:400;color:var(--glow)}
 footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:var(--mist-dim);font-size:13px}
 footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;color:var(--mist);margin-bottom:10px}
 @media(max-width:640px){
-  nav a:not(:last-child){display:none}
+  /* The cluster's mobile rule keeps only the LAST nav item. That is fine until a language
+     switch exists: putting العربية last shows an English reader nothing but an Arabic link,
+     and putting it first hides it from exactly the Arabic reader on a phone who needs it —
+     and GCC traffic is overwhelmingly mobile. So mobile keeps the last TWO: Home and the
+     switch. (Verified in a browser at 375px — the first attempt at this exempted only the
+     switch and silently hid Home, which is the same dead-nav defect the Arabic builder page
+     hit from the other direction.) */
+  nav a:not(:last-child):not(:nth-last-child(2)){display:none}
+  nav a.langswitch{margin-left:18px}
 }
 </style>
 <!-- schema:start -->
@@ -200,6 +212,7 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
     <a href="index.html#pricing">Pricing</a>
     <a href="hooks.html">Hooks</a>
     <a href="index.html">Home</a>
+    <a class="langswitch" href="free-audit-ar.html" lang="ar" dir="rtl" style="color:var(--glow);letter-spacing:0">العربية</a>
   </nav>
 </header>
 
