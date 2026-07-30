@@ -58,6 +58,8 @@ nav{display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,30px);justify-content:flex-
 nav a{color:var(--mist-dim);text-decoration:none;font-size:14px;transition:color .3s}
 nav a:hover{color:var(--glow)}
 nav a.en{color:var(--glow);direction:ltr;unicode-bidi:isolate}
+/* the free tool survives the mobile nav collapse — it is the one link worth keeping there */
+nav a.tool{color:var(--glow)}
 
 .btn{display:inline-block;padding:15px 34px;border-radius:100px;font-family:var(--sans);font-weight:600;font-size:15px;text-decoration:none;transition:transform .3s,box-shadow .3s}
 .btn-solid{background:var(--glow);color:var(--ink)}
@@ -119,7 +121,7 @@ footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);d
 footer .fm{font-weight:600;color:var(--mist);margin-bottom:8px}
 footer .end{text-align:end}
 @media(max-width:640px){
-  nav a:not(.en):not(:first-child){display:none}
+  nav a:not(.en):not(.tool):not(:first-child){display:none}
   .hooklist{padding:8px 22px}
 }
 </style>
@@ -198,7 +200,7 @@ footer .end{text-align:end}
         {
           "@type": "ListItem",
           "position": 4,
-          "name": "ثلاث تمرات محشوّة في ثلاجتي، حوّلت التحلية إلى مناسبة."
+          "name": "قالت أمّي إنّ رائحته تشبه عود جدّي، وهي لا تُجامل في العطور."
         },
         {
           "@type": "ListItem",
@@ -291,6 +293,7 @@ footer .end{text-align:end}
   <a class="wordmark" href="index.html">Deep<b>Mist</b>&nbsp;AI</a>
   <nav>
     <a href="hooks-perfume-oud.html" class="en">English</a>
+    <a href="ad-script-builder-ar.html" class="tool">منشئ سيناريو الإعلان</a>
     <a href="index.html#work">أعمالنا</a>
     <a href="index.html#services">خدماتنا</a>
     <a href="free-audit.html">تدقيق مجاني</a>
@@ -322,7 +325,7 @@ footer .end{text-align:end}
         <li><span class="n">١</span>رشّة واحدة، وظلّ مجلسي كلّه يفوح بهذه الرائحة لساعات.</li>
         <li><span class="n">٢</span>توقّف عن شراء العود قبل أن تتأكّد من مصدره الحقيقي.</li>
         <li><span class="n">٣</span>سبب اختفاء عطرك عند الظهر، والحلّ الذي يعرفه أهل الخليج منذ زمن.</li>
-        <li><span class="n">٤</span>ثلاث تمرات محشوّة في ثلاجتي، حوّلت التحلية إلى مناسبة.</li>
+        <li><span class="n">٤</span>قالت أمّي إنّ رائحته تشبه عود جدّي، وهي لا تُجامل في العطور.</li>
         <li><span class="n">٥</span>كلّ من في المجلس سألني عن العطر الذي أرتديه. ها هو.</li>
         <li><span class="n">٦</span>طبّقت هذا فوق البخور، فسكتت الغرفة.</li>
         <li><span class="n">٧</span>لا تدفع أسعار المحلات الفاخرة مقابل العود قبل أن تقرأ هذا.</li>

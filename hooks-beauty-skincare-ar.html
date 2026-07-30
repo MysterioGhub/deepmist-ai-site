@@ -58,6 +58,8 @@ nav{display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,30px);justify-content:flex-
 nav a{color:var(--mist-dim);text-decoration:none;font-size:14px;transition:color .3s}
 nav a:hover{color:var(--glow)}
 nav a.en{color:var(--glow);direction:ltr;unicode-bidi:isolate}
+/* the free tool survives the mobile nav collapse — it is the one link worth keeping there */
+nav a.tool{color:var(--glow)}
 
 .btn{display:inline-block;padding:15px 34px;border-radius:100px;font-family:var(--sans);font-weight:600;font-size:15px;text-decoration:none;transition:transform .3s,box-shadow .3s}
 .btn-solid{background:var(--glow);color:var(--ink)}
@@ -119,7 +121,7 @@ footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);d
 footer .fm{font-weight:600;color:var(--mist);margin-bottom:8px}
 footer .end{text-align:end}
 @media(max-width:640px){
-  nav a:not(.en):not(:first-child){display:none}
+  nav a:not(.en):not(.tool):not(:first-child){display:none}
   .hooklist{padding:8px 22px}
 }
 </style>
@@ -296,6 +298,7 @@ footer .end{text-align:end}
   <a class="wordmark" href="index.html">Deep<b>Mist</b>&nbsp;AI</a>
   <nav>
     <a href="hooks-beauty-skincare.html" class="en">English</a>
+    <a href="ad-script-builder-ar.html" class="tool">منشئ سيناريو الإعلان</a>
     <a href="index.html#work">أعمالنا</a>
     <a href="index.html#services">خدماتنا</a>
     <a href="free-audit.html">تدقيق مجاني</a>
