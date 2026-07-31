@@ -6,6 +6,9 @@
 <title>AI Video Ad Studio Dubai | UAE-Licensed</title>
 <meta name="description" content="Deep Mist AI is a UAE-licensed studio making vertical AI video ads for Dubai and Gulf brands. Every frame is AI-generated, produced in Arabic or English.">
 <link rel="canonical" href="https://deepmiststudio.com/ai-video-ad-studio-dubai-uae.html">
+<link rel="alternate" hreflang="en" href="https://deepmiststudio.com/ai-video-ad-studio-dubai-uae.html">
+<link rel="alternate" hreflang="ar" href="https://deepmiststudio.com/ai-video-ad-studio-dubai-uae-ar.html">
+<link rel="alternate" hreflang="x-default" href="https://deepmiststudio.com/ai-video-ad-studio-dubai-uae.html">
 <meta name="geo.region" content="AE-AJ">
 <meta name="geo.placename" content="Ajman Media City Free Zone">
 <meta property="og:type" content="website">
@@ -194,7 +197,11 @@ footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);d
 footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;color:var(--mist);margin-bottom:10px}
 
 @media(max-width:640px){
-  nav a:not(:last-child){display:none}
+  /* Same fix free-audit.html carries: the cluster's mobile rule keeps only the LAST nav item,
+     which once a language switch exists shows an English reader nothing but العربية. Mobile
+     keeps the last TWO — Home and the switch. */
+  nav a:not(:last-child):not(:nth-last-child(2)){display:none}
+  nav a.langswitch{margin-left:18px}
   .regcard div{border-left:none;border-top:1px solid var(--line)}
   .regcard div:first-child{border-top:none}
 }
@@ -211,6 +218,7 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
     <a href="ad-script-builder.html">Script Builder</a>
     <a href="free-audit.html">Free Audit</a>
     <a href="index.html">Home</a>
+    <a class="langswitch" href="ai-video-ad-studio-dubai-uae-ar.html" lang="ar" dir="rtl" style="color:var(--glow);letter-spacing:0">العربية</a>
   </nav>
 </header>
 
