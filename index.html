@@ -165,7 +165,7 @@ h2 em{font-style:italic;color:var(--glow)}
 footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:var(--mist-dim);font-size:13px}
 footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;color:var(--mist);margin-bottom:10px}
 @media(max-width:640px){
-  nav a:not(:last-child){display:none}
+  nav a:not(:last-child):not(:nth-last-child(2)){display:none}
   .grid{grid-template-columns:repeat(2,1fr);gap:12px}
 }
 </style>
@@ -343,6 +343,7 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
     <a href="#services">Services</a>
     <a href="hooks.html">Hooks</a>
     <a href="free-audit.html">Free Audit</a>
+    <a href="tools.html">Tools</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>

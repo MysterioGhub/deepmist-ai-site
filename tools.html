@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Tools for Hooks and Ad Scripts</title>
+<meta name="description" content="Opening lines and self-serve ad script builders for short vertical product ads, all free and browser-based with no signup.">
+<link rel="canonical" href="https://deepmiststudio.com/tools.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://deepmiststudio.com/tools.html">
+<meta property="og:title" content="Free Tools for Hooks and Ad Scripts">
+<meta property="og:description" content="Opening lines and self-serve ad script builders for short vertical product ads, all free and browser-based with no signup.">
+<meta property="og:image" content="https://deepmiststudio.com/media/og/og-tools.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Free tools from Deep Mist AI">
+<meta property="og:site_name" content="Deep Mist AI">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Tools for Hooks and Ad Scripts">
+<meta name="twitter:description" content="Opening lines and self-serve ad script builders for short vertical product ads, all free and browser-based with no signup.">
+<meta name="twitter:image" content="https://deepmiststudio.com/media/og/og-tools.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0d0e;
+  --mist:#c9d4d2;
+  --mist-dim:#77837f;
+  --glow:#8ff0d4;
+  --warm:#f0c98f;
+  --line:rgba(201,212,210,.14);
+  --serif:"Fraunces",serif;
+  --sans:"Archivo",sans-serif;
+  --wide:"Archivo Expanded",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--mist);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--glow);color:var(--ink)}
+
+.fog{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.fog i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+.fog i:nth-child(1){width:60vw;height:60vw;left:-20vw;top:-25vw;background:radial-gradient(circle,#1d3a33,transparent 65%)}
+.fog i:nth-child(2){width:50vw;height:50vw;right:-18vw;top:20vh;background:radial-gradient(circle,#15272e,transparent 65%)}
+main,header.site,footer.site{position:relative;z-index:2}
+
+header.site{display:flex;justify-content:space-between;align-items:center;padding:28px clamp(20px,5vw,64px);border-bottom:1px solid var(--line)}
+.wordmark{font-family:var(--wide);font-weight:600;font-size:14px;letter-spacing:.34em;color:var(--mist);text-decoration:none;text-transform:uppercase}
+.wordmark b{color:var(--glow);font-weight:600}
+nav a{color:var(--mist-dim);text-decoration:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-left:clamp(16px,3vw,40px);transition:color .3s}
+nav a:hover{color:var(--glow)}
+nav a[aria-current="page"]{color:var(--glow)}
+
+.btn{display:inline-block;padding:16px 34px;border-radius:100px;font-family:var(--wide);font-size:13px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:transform .3s,box-shadow .3s}
+.btn-solid{background:var(--glow);color:var(--ink);font-weight:600}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(143,240,212,.25)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+.intro{padding-top:clamp(56px,9vh,96px)}
+.crumb{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist-dim);margin-bottom:26px}
+.crumb a{color:var(--mist-dim);text-decoration:none;border-bottom:1px solid var(--line);transition:color .3s,border-color .3s}
+.crumb a:hover{color:var(--glow);border-color:var(--glow)}
+.eyebrow{font-family:var(--wide);font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--glow);margin-bottom:34px;display:flex;align-items:center;gap:16px}
+.eyebrow::before{content:"";display:block;width:44px;height:1px;background:var(--glow)}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(36px,5.6vw,72px);line-height:1.05;letter-spacing:-.015em;color:#e9efee;max-width:17ch}
+h1 em{font-style:italic;font-weight:400;color:var(--glow)}
+.lede{max-width:640px;margin-top:32px;font-size:clamp(16px,1.5vw,19px);color:var(--mist-dim)}
+.specpill{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:10px 20px;border:1px solid rgba(240,201,143,.32);border-radius:100px;font-size:13px;color:var(--warm);letter-spacing:.04em}
+.specpill b{font-weight:500;color:var(--mist)}
+
+h3.sec{font-family:var(--wide);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#e9efee;margin-bottom:20px}
+
+/* tool cards */
+.tools{margin-top:clamp(48px,7vh,80px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.tool{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:20px;padding:30px 28px;text-decoration:none;color:inherit;background:linear-gradient(160deg,rgba(201,212,210,.03),transparent 60%);transition:border-color .3s,transform .3s}
+.tool:hover{border-color:rgba(143,240,212,.42);transform:translateY(-3px)}
+.te{font-family:var(--wide);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--mist-dim);margin-bottom:14px}
+.tool h3{font-family:var(--serif);font-weight:300;font-size:27px;line-height:1.15;color:#e9efee;margin-bottom:10px}
+.tstat{font-family:var(--wide);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--glow);margin-bottom:16px}
+.tblurb{font-size:14.5px;color:var(--mist-dim);flex:1 1 auto}
+.tsub{display:block;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--mist-dim)}
+.tgo{display:block;margin-top:16px;font-family:var(--wide);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--glow)}
+
+/* the audit — deliberately NOT in the tool grid: a person writes it */
+.audit{margin-top:clamp(44px,6vh,72px);border:1px solid rgba(240,201,143,.28);border-radius:20px;padding:clamp(28px,4vw,38px);background:linear-gradient(160deg,rgba(240,201,143,.05),transparent 64%)}
+.audit .sec{color:var(--warm)}
+.audit p{color:var(--mist-dim);font-size:15px;max-width:760px}
+.audit .aline{margin-top:16px;font-size:14px;color:var(--mist)}
+.audit .aline b{color:var(--warm);font-weight:500}
+.audit a.go{display:inline-block;margin-top:20px;font-family:var(--wide);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--warm);text-decoration:none;border-bottom:1px solid rgba(240,201,143,.4)}
+
+.band{margin-top:clamp(52px,7vh,84px);border:1px solid var(--line);border-radius:18px;padding:34px 30px;background:linear-gradient(160deg,rgba(143,240,212,.045),transparent 65%)}
+.band h3{font-family:var(--wide);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#e9efee;margin-bottom:16px}
+.band p{color:var(--mist-dim);font-size:15px;max-width:780px}
+.band p + p{margin-top:14px}
+.band strong{color:var(--mist);font-weight:500}
+
+.close{padding-top:clamp(56px,8vh,96px);padding-bottom:clamp(70px,10vh,110px)}
+.close h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,4.4vw,52px);line-height:1.1;color:#e9efee;max-width:18ch}
+.close h2 em{font-style:italic;font-weight:400;color:var(--glow)}
+.cta-row{margin-top:40px;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.cta-row .alt{font-size:14px;color:var(--mist-dim);max-width:360px}
+.cta-row .alt a{color:var(--glow);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .3s}
+.cta-row .alt a:hover{border-color:var(--glow)}
+
+footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:var(--mist-dim);font-size:13px}
+footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;color:var(--mist);margin-bottom:10px}
+
+@media(max-width:640px){
+  /* Show the last TWO nav items, not one. The single-item rule this cluster shipped
+     collapsed the whole nav to "Home" on a phone, which is where most of this traffic
+     reads — a tools link nobody on mobile could see would not have fixed anything. */
+  nav a:not(:last-child):not(:nth-last-child(2)){display:none}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://deepmiststudio.com/#org",
+      "name": "Deep Mist AI",
+      "legalName": "Deep Mist AI FZE LLC",
+      "url": "https://deepmiststudio.com/",
+      "logo": "https://deepmiststudio.com/media/og/og-home.jpg",
+      "description": "AI video ad studio producing UGC-style product ads in English and Arabic. Every video is 100% AI-generated and disclosed as such.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ajman Media City",
+        "addressCountry": "AE"
+      },
+      "sameAs": [
+        "https://www.fiverr.com/bram000"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://deepmiststudio.com/#website",
+      "url": "https://deepmiststudio.com/",
+      "name": "Deep Mist AI",
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://deepmiststudio.com/tools.html#page",
+      "url": "https://deepmiststudio.com/tools.html",
+      "name": "Free Tools for Hooks and Ad Scripts",
+      "description": "Opening lines and self-serve ad script builders for short vertical product ads, all free and browser-based with no signup.",
+      "primaryImageOfPage": "https://deepmiststudio.com/media/og/og-tools.jpg",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://deepmiststudio.com/#website"
+      },
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      },
+      "mainEntity": {
+        "@id": "https://deepmiststudio.com/tools.html#tools"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://deepmiststudio.com/tools.html#tools",
+      "name": "Free Tools for Hooks and Ad Scripts",
+      "inLanguage": "en",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Free UGC ad hook library",
+          "description": "A bank of written opening lines for short vertical product ads, sorted by product category and free to read in full. There is an English set and a smaller Arabic set, and nothing is gated or held back.",
+          "url": "https://deepmiststudio.com/hooks.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free ad script builder",
+          "description": "Type a product name, pick a category and a shot format, and the page assembles an opening line, a short beat-by-beat shot outline, and a prompt you can paste into a video model. It runs entirely in your browser, so there is no signup, no email, and your product name never leaves your device.",
+          "url": "https://deepmiststudio.com/ad-script-builder.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Free Arabic ad script builder",
+          "description": "The Arabic script builder works the same way and assembles Arabic opening lines for your product. By design, the prompt it produces stays in English, because video models follow English direction more reliably, while your spoken Arabic line passes through untranslated.",
+          "url": "https://deepmiststudio.com/ad-script-builder-ar.html"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Deep Mist AI",
+          "item": "https://deepmiststudio.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free tools"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="fog"><i></i><i></i></div>
+
+<header class="site">
+  <a class="wordmark" href="index.html">Deep<b>Mist</b>&nbsp;AI</a>
+  <nav>
+    <a href="index.html#work">Work</a>
+    <a href="hooks.html">Hooks</a>
+    <a href="index.html#services">Services</a>
+    <a href="free-audit.html">Free Audit</a>
+    <a href="tools.html" aria-current="page">Tools</a>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap intro">
+    <p class="crumb"><a href="index.html">Deep Mist AI</a> &nbsp;/&nbsp; Free tools</p>
+    <div class="eyebrow">Free &mdash; No Signup</div>
+    <h1>A few free tools to help you <em>write and plan short product ads</em></h1>
+    <p class="lede">Everything on this page is free and asks nothing of you. Browse a full bank of opening lines, build a short ad script in your browser, or send a product link for a hand-written hook audit.</p>
+    <div class="specpill"><b>Nothing here is gated.</b> No email, no account, no trial.</div>
+
+    <div class="tools">
+        <a class="tool" href="hooks.html">
+          <span class="te">Read it</span>
+          <h3>The hook library</h3>
+          <p class="tstat">97 opening lines</p>
+          <p class="tblurb">A bank of written opening lines for short vertical product ads, sorted by product category and free to read in full. There is an English set and a smaller Arabic set, and nothing is gated or held back.</p>
+          <span class="tsub">Across 9 product categories in English, plus 34 Arabic lines on 3 more pages</span>
+          <span class="tgo">Browse the hooks &rarr;</span>
+        </a>
+        <a class="tool" href="ad-script-builder.html">
+          <span class="te">Use it</span>
+          <h3>Ad script builder</h3>
+          <p class="tstat">10 categories &times; 3 shot formats</p>
+          <p class="tblurb">Type a product name, pick a category and a shot format, and the page assembles an opening line, a short beat-by-beat shot outline, and a prompt you can paste into a video model. It runs entirely in your browser, so there is no signup, no email, and your product name never leaves your device.</p>
+          <span class="tsub">Runs entirely in your browser. Nothing is sent anywhere</span>
+          <span class="tgo">Build a script &rarr;</span>
+        </a>
+        <a class="tool" href="ad-script-builder-ar.html">
+          <span class="te">Use it &mdash; Arabic</span>
+          <h3>&#x645;&#x646;&#x634;&#x626; &#x633;&#x64A;&#x646;&#x627;&#x631;&#x64A;&#x648; &#x627;&#x644;&#x625;&#x639;&#x644;&#x627;&#x646;</h3>
+          <p class="tstat">3 categories &times; 3 shot formats</p>
+          <p class="tblurb">The Arabic script builder works the same way and assembles Arabic opening lines for your product. By design, the prompt it produces stays in English, because video models follow English direction more reliably, while your spoken Arabic line passes through untranslated.</p>
+          <span class="tsub">Arabic opening lines. The video prompt stays in English on purpose</span>
+          <span class="tgo">Build an Arabic script &rarr;</span>
+        </a>
+    </div>
+
+    <div class="audit">
+      <h3 class="sec">Not a tool &mdash; a person</h3>
+      <p>Send a product link and a person here will write a set of opening lines for that specific product, by hand, and reply to you. It is a real person doing real work, so it is not instant, and it costs nothing.</p>
+      <p class="aline"><b>Three opening lines, written for your product.</b> Free, and there is nothing to buy afterwards.</p>
+      <a class="go" href="free-audit.html">Ask for the free hook audit &rarr;</a>
+    </div>
+
+    <div class="band">
+      <h3>Why these are free</h3>
+      <p>We are a new studio with nothing to point at yet. Free, genuinely useful things are the honest way to earn a look, so we wrote these and put them here. Take whatever helps.</p>
+      <p><strong>We have no published reviews and no client results to quote.</strong> These tools are made of the same material our paid work is made of, which is the most honest thing we can show you while that stays true.</p>
+    </div>
+
+    <div class="band">
+      <h3>What these don't do</h3>
+      <p>These are starting points, not finished ads. The builder assembles from a bank of lines we wrote ourselves rather than creating something new for each visitor. A written opening line still has to be generated, voiced, and cut before it becomes an ad.</p>
+      <p><strong>Every ad we make is AI-generated</strong> &mdash; synthetic presenters, synthetic voices, disclosed wherever the ad runs. These tools plan that work. They do not shoot anything, and nobody in the footage is a real customer.</p>
+    </div>
+  </div>
+
+  <div class="wrap close">
+    <h2>Rather have <em>the ad made for you</em>?</h2>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="https://www.fiverr.com/bram000">See the packages</a>
+      <span class="alt">Tell us what the product is and what it has to do. We write the script, generate the footage, voice it, and cut it into a finished vertical ad. Not ready for that? The <a href="free-audit.html">free hook audit</a> asks for nothing.</span>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div><div class="fm">Deep Mist AI FZE LLC</div>Ajman Media City Free Zone, United Arab Emirates<br>Licensed media production company &middot; Est. 2019</div>
+  <div style="text-align:right"><div class="fm">Honestly synthetic.</div>Every frame AI-generated. Every claim human-checked.<br>&copy; 2026 Deep Mist AI</div>
+</footer>
+<script src="js/analytics.js" defer></script>
+</body>
+</html>

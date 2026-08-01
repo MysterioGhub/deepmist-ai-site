@@ -57,7 +57,7 @@ nav a:hover{color:var(--glow)}
 .btn-solid:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(143,240,212,.25)}
 
 .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
-.intro{padding:clamp(56px,9vh,96px) 0 0}
+.intro{padding-top:clamp(56px,9vh,96px)}
 .crumb{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist-dim);margin-bottom:26px}
 .crumb a{color:var(--mist-dim);text-decoration:none;border-bottom:1px solid var(--line);transition:color .3s,border-color .3s}
 .crumb a:hover{color:var(--glow);border-color:var(--glow)}
@@ -134,7 +134,7 @@ h3.sec{font-family:var(--wide);font-size:12px;letter-spacing:.26em;text-transfor
 .nichelink:hover{border-color:rgba(143,240,212,.45);color:var(--glow)}
 .nichelink.all{border-color:rgba(143,240,212,.3);color:var(--glow)}
 
-.close{padding:clamp(56px,8vh,96px) 0 clamp(70px,10vh,110px)}
+.close{padding-top:clamp(56px,8vh,96px);padding-bottom:clamp(70px,10vh,110px)}
 .close h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,4.4vw,52px);line-height:1.1;color:#e9efee;max-width:18ch}
 .close h2 em{font-style:italic;font-weight:400;color:var(--glow)}
 .cta-row{margin-top:40px;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
@@ -151,7 +151,7 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
   .cc{border-left:none;border-top:1px solid var(--line)}
 }
 @media(max-width:640px){
-  nav a:not(:last-child){display:none}
+  nav a:not(:last-child):not(:nth-last-child(2)){display:none}
 }
 </style>
 <script type="application/ld+json">
@@ -236,6 +236,7 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
     <a href="hooks.html">Hooks</a>
     <a href="index.html#services">Services</a>
     <a href="free-audit.html">Free Audit</a>
+    <a href="tools.html">Tools</a>
     <a href="index.html">Home</a>
   </nav>
 </header>
