@@ -53,6 +53,7 @@ header.site{display:flex;justify-content:space-between;align-items:center;paddin
 nav{display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,30px);justify-content:flex-end}
 nav a{color:var(--mist-dim);text-decoration:none;font-size:14px;transition:color .3s}
 nav a:hover{color:var(--glow)}
+nav a.tool{color:var(--glow)}
 
 .btn{display:inline-block;padding:15px 34px;border-radius:100px;font-family:var(--sans);font-weight:600;font-size:15px;text-decoration:none;transition:transform .3s,box-shadow .3s}
 .btn-solid{background:var(--glow);color:var(--ink)}
@@ -154,7 +155,14 @@ footer .end{text-align:end}
   .player{max-width:320px}
 }
 @media(max-width:640px){
-  nav a:not(:first-child){display:none}
+  /* Was: hide every nav item except the first child — which left these two pages with a nav
+     of exactly ONE link on a phone. The Arabic script builder and the Dubai page had already
+     replaced that rule with wrapping and wrote down why; these pages were built before that
+     and never got the fix, so the cluster had three different mobile nav behaviours. Wrapping
+     everywhere is now the rule. */
+  header.site{flex-wrap:wrap;gap:14px}
+  nav{justify-content:flex-start;row-gap:8px;gap:clamp(14px,4vw,24px)}
+  nav a{font-size:13.5px}
   .steplist{padding:6px 20px}
   .steplist li{flex-direction:column;gap:8px}
 }
@@ -263,8 +271,9 @@ footer .end{text-align:end}
   <a class="wordmark" href="index.html">Deep<b>Mist</b>&nbsp;AI</a>
   <nav>
     <a href="hooks-perfume-oud-ar.html">الجمل الافتتاحية</a>
+    <a href="tools-ar.html" class="tool">أدوات مجانية</a>
+    <a href="ad-script-builder-ar.html">منشئ سيناريو الإعلان</a>
     <a href="index.html#work">أعمالنا</a>
-    <a href="index.html#services">خدماتنا</a>
     <a href="free-audit-ar.html">تدقيق مجاني</a>
     <a href="index.html">الرئيسية</a>
   </nav>

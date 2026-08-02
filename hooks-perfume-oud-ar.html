@@ -121,7 +121,14 @@ footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);d
 footer .fm{font-weight:600;color:var(--mist);margin-bottom:8px}
 footer .end{text-align:end}
 @media(max-width:640px){
-  nav a:not(.en):not(.tool):not(:first-child){display:none}
+  /* Was: hide every nav item except .en, .tool and the first child — which left a
+     three-link nav on the phone where most of this cluster is read. The Arabic script
+     builder and the Dubai page already abandoned that rule for wrapping, so this was the
+     last template still hiding links; wrapping is now the cluster-wide rule.
+     A tools link nobody on mobile can see would not have fixed anything. */
+  header.site{flex-wrap:wrap;gap:14px}
+  nav{justify-content:flex-start;row-gap:8px;gap:clamp(14px,4vw,24px)}
+  nav a{font-size:13.5px}
   .hooklist{padding:8px 22px}
 }
 </style>
@@ -293,9 +300,9 @@ footer .end{text-align:end}
   <a class="wordmark" href="index.html">Deep<b>Mist</b>&nbsp;AI</a>
   <nav>
     <a href="hooks-perfume-oud.html" class="en">English</a>
-    <a href="ad-script-builder-ar.html" class="tool">منشئ سيناريو الإعلان</a>
+    <a href="tools-ar.html" class="tool">أدوات مجانية</a>
+    <a href="ad-script-builder-ar.html">منشئ سيناريو الإعلان</a>
     <a href="index.html#work">أعمالنا</a>
-    <a href="index.html#services">خدماتنا</a>
     <a href="free-audit-ar.html">تدقيق مجاني</a>
     <a href="index.html">الرئيسية</a>
   </nav>
