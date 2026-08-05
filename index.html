@@ -6,6 +6,9 @@
 <title>Deep Mist AI — AI Video Ad Studio</title>
 <meta name="description" content="UGC-style AI video ads for e-commerce brands, in English and Arabic. Scripted, generated and finished by AI — delivered in 72 hours. Deep Mist AI FZE, UAE.">
 <link rel="canonical" href="https://deepmiststudio.com/">
+<link rel="alternate" hreflang="en" href="https://deepmiststudio.com/">
+<link rel="alternate" hreflang="ar" href="https://deepmiststudio.com/index-ar.html">
+<link rel="alternate" hreflang="x-default" href="https://deepmiststudio.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://deepmiststudio.com/">
 <meta property="og:title" content="Deep Mist AI — AI Video Ad Studio">
@@ -69,6 +72,10 @@ header.site{
 .wordmark b{color:var(--glow);font-weight:600}
 nav a{color:var(--mist-dim);text-decoration:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-left:clamp(16px,3vw,40px);transition:color .3s}
 nav a:hover{color:var(--glow)}
+/* The Arabic switch. letter-spacing and uppercase are set on `nav a` for the Latin labels and
+   both are wrong for Arabic — tracking pulls joined letters apart, and there is no case to
+   upper — so this one link opts out of both and isolates its own direction. */
+nav a.ar{color:var(--glow);letter-spacing:0;text-transform:none;font-size:14px;direction:rtl;unicode-bidi:isolate}
 
 /* ---- hero ---- */
 .hero{padding:clamp(70px,12vh,140px) clamp(20px,5vw,64px) clamp(60px,9vh,110px);max-width:1200px}
@@ -165,7 +172,13 @@ h2 em{font-style:italic;color:var(--glow)}
 footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:var(--mist-dim);font-size:13px}
 footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;color:var(--mist);margin-bottom:10px}
 @media(max-width:640px){
-  nav a:not(:last-child):not(:nth-last-child(2)){display:none}
+  /* Nav labels WRAP on a phone, they are never hidden. The old rule here hid every item but
+     the last two, which was already thin at eight items and became a real loss at nine — the
+     Arabic switch would have pushed Tools off the phone entirely. This is the same rule the
+     whole Arabic cluster settled on after two case-study pages shipped a ONE-LINK nav. */
+  header.site{flex-wrap:wrap;gap:12px}
+  nav{display:flex;flex-wrap:wrap;row-gap:8px}
+  nav a{margin-left:0;margin-right:clamp(14px,4vw,26px);font-size:12px}
   .grid{grid-template-columns:repeat(2,1fr);gap:12px}
 }
 </style>
@@ -345,6 +358,7 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
     <a href="free-audit.html">Free Audit</a>
     <a href="tools.html">Tools</a>
     <a href="#contact">Contact</a>
+    <a href="index-ar.html" class="ar" hreflang="ar" lang="ar">العربية</a>
   </nav>
 </header>
 
