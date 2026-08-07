@@ -334,9 +334,12 @@ footer .end{text-align:end}
       <div class="toolbar">
         <button type="button" class="gbtn primary" id="again">اقترح جملة افتتاحية أخرى</button>
         <button type="button" class="gbtn" id="copyall">انسخ السيناريو كاملًا</button>
+        <button type="button" class="gbtn" id="copylink">انسخ الرابط</button>
         <span class="counter" id="counter"></span>
         <span class="copied" id="copiedall">تم النسخ</span>
+        <span class="copied" id="copiedlink">تم نسخ الرابط</span>
       </div>
+      <p class="hint">يعيد الرابط بناء هذا السيناريو كما تراه الآن: الفئة، وصيغة التصوير، والجملة الافتتاحية، واسم المنتج الذي كتبته. ينتقل الاسم مع الرابط الذي تختار إرساله، كما ينتقل مع النص الذي تنسخه؛ أما الصفحة فلا ترسل شيئاً إلى أي جهة، ولا يصلنا منه شيء.</p>
     </section>
 
     <div class="out" id="out" aria-live="polite">
@@ -573,23 +576,112 @@ footer .end{text-align:end}
     document.body.removeChild(t);
   }
 
-  $("niche").addEventListener("change", function () { state.niche = this.value; state.i = 0; render(); });
-  $("product").addEventListener("input", render);
+  var btns = document.querySelectorAll(".fmt");
+
+  /* ---- shareable link -------------------------------------------------------------------
+     Identical in behaviour to the English builder's, and deliberately so — a reader who is sent
+     one of these links should get the same thing whichever language the tool was in. The hash
+     carries only what the PAGE chose (category, shot format, which opening line), so the address
+     bar describes the screen without ever holding the visitor's own text. Both name fields — the
+     Arabic name the script says and the optional Latin name the English prompt carries — ride
+     only in the URL the "copy link" button puts on the clipboard, which is the same exposure the
+     copy-the-script button has always had. A hook is identified by index AND by a checksum of the
+     line, so a link survives an edited line (index resolves) and an inserted one (checksum does);
+     the index alone could never travel, because it is a position in a per-visit random order. */
+  function hookKey(s) {
+    var h = 5381;                                   // djb2, all 32-bit-exact so every engine agrees
+    for (var k = 0; k < s.length; k++) h = ((h << 5) + h + s.charCodeAt(k)) | 0;
+    return (h >>> 0).toString(36);
+  }
+  function cleanText(s) {
+    return String(s).replace(/[\u0000-\u001F\u007F]/g, " ").replace(/\s+/g, " ").trim().slice(0, 80);
+  }
+  function parseHash() {
+    var raw = String(location.hash || "").replace(/^#/, "");
+    if (!raw) return null;
+    var out = {}, parts = raw.split("&");
+    for (var k = 0; k < parts.length; k++) {
+      var eq = parts[k].indexOf("=");
+      if (eq < 1) continue;
+      try { out[parts[k].slice(0, eq)] = decodeURIComponent(parts[k].slice(eq + 1).replace(/\+/g, " ")); }
+      catch (e) { /* a malformed escape is a broken link, not a reason to fail the page */ }
+    }
+    return out;
+  }
+  // Everything here arrives from a stranger's URL and is trusted with nothing: an unknown category
+  // or format falls back to the default, an out-of-range index is dropped, and both names are
+  // stripped of control characters and capped. They are set as input values, never as markup.
+  function restore(q) {
+    if (!q) return false;
+    var used = false;
+    if (q.c && niche(q.c).slug === q.c) { state.niche = q.c; used = true; }
+    if (q.f && format(q.f).key === q.f) { state.fmt = q.f; used = true; }
+    var n = niche(state.niche), abs = -1;
+    if (q.k) for (var k = 0; k < n.hooks.length; k++) if (hookKey(n.hooks[k]) === q.k) { abs = k; break; }
+    if (abs < 0 && q.h && /^[0-9]+$/.test(q.h) && +q.h < n.hooks.length) abs = +q.h;
+    if (abs >= 0) {
+      var pos = shuffled(state.niche).indexOf(abs);
+      state.i = pos < 0 ? 0 : pos;
+      used = true;
+    }
+    if (q.p) { var p = cleanText(q.p); if (p) { $("product").value = p; used = true; } }
+    if (q.l) { var lt = cleanText(q.l); if (lt) { $("latin").value = lt; used = true; } }
+    return used;
+  }
+  // The controls are markup; the link changed the state behind them, so they have to be told.
+  function syncControls() {
+    $("niche").value = state.niche;
+    Array.prototype.forEach.call(btns, function (b) {
+      var on = b.getAttribute("data-fmt") === state.fmt;
+      b.classList[on ? "add" : "remove"]("on");
+      b.setAttribute("aria-checked", on ? "true" : "false");
+    });
+  }
+  function shareUrl(withNames) {
+    var n = niche(state.niche), ord = shuffled(state.niche), abs = ord[state.i % ord.length];
+    var h = "c=" + encodeURIComponent(state.niche) + "&f=" + encodeURIComponent(state.fmt) +
+            "&h=" + abs + "&k=" + hookKey(n.hooks[abs]);
+    if (withNames) {
+      var p = cleanText($("product").value), lt = cleanText($("latin").value);
+      if (p) h += "&p=" + encodeURIComponent(p);
+      if (lt) h += "&l=" + encodeURIComponent(lt);
+    }
+    return location.href.split("#")[0] + "#" + h;
+  }
+  var touched = false;   // an untouched page keeps the clean URL the visitor arrived on
+  function syncHash() {
+    if (!touched) return;
+    try { history.replaceState(null, "", "#" + shareUrl(false).split("#")[1]); }
+    catch (e) { /* replaceState is rate-limited in some browsers; the copy button still works */ }
+  }
+
+  $("niche").addEventListener("change", function () {
+    state.niche = this.value; state.i = 0; touched = true; render(); syncHash();
+  });
+  $("product").addEventListener("input", render);   // no syncHash: the hash never carries a name
   $("latin").addEventListener("input", render);
-  $("again").addEventListener("click", function () { state.i++; render(); });
+  $("again").addEventListener("click", function () { state.i++; touched = true; render(); syncHash(); });
   $("copyprompt").addEventListener("click", function () { copy(promptText(), $("copiedprompt")); });
   $("copyall").addEventListener("click", function () { copy(fullScript(), $("copiedall")); });
+  $("copylink").addEventListener("click", function () { copy(shareUrl(true), $("copiedlink")); });
 
-  var btns = document.querySelectorAll(".fmt");
   Array.prototype.forEach.call(btns, function (b) {
     b.addEventListener("click", function () {
       Array.prototype.forEach.call(btns, function (o) { o.classList.remove("on"); o.setAttribute("aria-checked", "false"); });
       b.classList.add("on"); b.setAttribute("aria-checked", "true");
       state.fmt = b.getAttribute("data-fmt");
-      render();
+      touched = true;
+      render(); syncHash();
     });
   });
 
+  // Pasting a different link into the same open tab should rebuild the script, not do nothing.
+  // replaceState never fires this, so our own writes cannot loop back through here.
+  window.addEventListener("hashchange", function () {
+    if (restore(parseHash())) { syncControls(); render(); }
+  });
+
+  if (restore(parseHash())) { touched = true; syncControls(); }
   render();
 })();
 </script>

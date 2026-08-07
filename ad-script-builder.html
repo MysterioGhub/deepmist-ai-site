@@ -280,7 +280,7 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
         <div class="field">
           <label for="product">What are you selling?</label>
           <input id="product" type="text" autocomplete="off" spellcheck="false" placeholder="e.g. a cold-brew coffee concentrate">
-          <p class="hint">Typed here only. It never leaves your browser.</p>
+          <p class="hint">Typed here only. This page has no server side, so nothing you type is ever sent to us.</p>
         </div>
         <div class="field">
           <label for="niche">Category</label>
@@ -310,9 +310,12 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
       <div class="toolbar">
         <button type="button" class="gbtn primary" id="again">Another hook</button>
         <button type="button" class="gbtn" id="copyall">Copy the whole script</button>
+        <button type="button" class="gbtn" id="copylink">Copy link</button>
         <span class="counter" id="counter"></span>
         <span class="copied" id="copiedall">Copied</span>
+        <span class="copied" id="copiedlink">Link copied</span>
       </div>
+      <p class="hint">The link rebuilds this exact script &mdash; category, shot format, opening line, and the product name you typed. That name rides in the link you choose to send, exactly as it rides in the script you copy; the page itself still sends nothing anywhere, and we never see either.</p>
     </section>
 
     <div class="out" id="out" aria-live="polite">
@@ -529,22 +532,111 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
     document.body.removeChild(t);
   }
 
-  $("niche").addEventListener("change", function () { state.niche = this.value; state.i = 0; render(); });
-  $("product").addEventListener("input", render);
-  $("again").addEventListener("click", function () { state.i++; render(); });
+  var btns = document.querySelectorAll(".fmt");
+
+  /* ---- shareable link -------------------------------------------------------------------
+     A script you cannot send to anyone is a script you use once. The hash carries what the PAGE
+     chose — category, shot format, which opening line — so the address bar always describes what
+     is on screen. It deliberately does NOT carry the product name: that text is the visitor's,
+     and writing it into the address bar would put it in their history and in the URL any future
+     analytics beacon reports. The "Copy link" button composes a URL that DOES carry it, because a
+     shared script without the product name is useless — and that URL exists only on the
+     clipboard. It is the same exposure the "Copy the whole script" button has always had.
+     A hook is identified TWICE, by index and by a checksum of the line itself, so a link survives
+     both an edited line (the index still resolves) and an inserted one (the checksum still does).
+     The per-visit shuffle is why the index alone could never travel: it is a position in an order
+     that is random per visitor, so a shared "hook 3" would be a different line for the reader. */
+  function hookKey(s) {
+    var h = 5381;                                   // djb2, all 32-bit-exact so every engine agrees
+    for (var k = 0; k < s.length; k++) h = ((h << 5) + h + s.charCodeAt(k)) | 0;
+    return (h >>> 0).toString(36);
+  }
+  function cleanText(s) {
+    return String(s).replace(/[\u0000-\u001F\u007F]/g, " ").replace(/\s+/g, " ").trim().slice(0, 80);
+  }
+  function parseHash() {
+    var raw = String(location.hash || "").replace(/^#/, "");
+    if (!raw) return null;
+    var out = {}, parts = raw.split("&");
+    for (var k = 0; k < parts.length; k++) {
+      var eq = parts[k].indexOf("=");
+      if (eq < 1) continue;
+      try { out[parts[k].slice(0, eq)] = decodeURIComponent(parts[k].slice(eq + 1).replace(/\+/g, " ")); }
+      catch (e) { /* a malformed escape is a broken link, not a reason to fail the page */ }
+    }
+    return out;
+  }
+  // Every value here arrives from a stranger's URL, so nothing is trusted: an unknown category or
+  // format falls back to the default, an out-of-range index is dropped, and the product name is
+  // stripped of control characters and capped. It is set as a value, never as markup.
+  function restore(q) {
+    if (!q) return false;
+    var used = false;
+    if (q.c && niche(q.c).slug === q.c) { state.niche = q.c; used = true; }
+    if (q.f && format(q.f).key === q.f) { state.fmt = q.f; used = true; }
+    var n = niche(state.niche), abs = -1;
+    if (q.k) for (var k = 0; k < n.hooks.length; k++) if (hookKey(n.hooks[k]) === q.k) { abs = k; break; }
+    if (abs < 0 && q.h && /^[0-9]+$/.test(q.h) && +q.h < n.hooks.length) abs = +q.h;
+    if (abs >= 0) {
+      var pos = shuffled(state.niche).indexOf(abs);
+      state.i = pos < 0 ? 0 : pos;
+      used = true;
+    }
+    if (q.p) { var p = cleanText(q.p); if (p) { $("product").value = p; used = true; } }
+    return used;
+  }
+  // The controls are markup; the link changed the state behind them, so they have to be told.
+  function syncControls() {
+    $("niche").value = state.niche;
+    Array.prototype.forEach.call(btns, function (b) {
+      var on = b.getAttribute("data-fmt") === state.fmt;
+      b.classList[on ? "add" : "remove"]("on");
+      b.setAttribute("aria-checked", on ? "true" : "false");
+    });
+  }
+  function shareUrl(withProduct) {
+    var n = niche(state.niche), ord = shuffled(state.niche), abs = ord[state.i % ord.length];
+    var h = "c=" + encodeURIComponent(state.niche) + "&f=" + encodeURIComponent(state.fmt) +
+            "&h=" + abs + "&k=" + hookKey(n.hooks[abs]);
+    if (withProduct) {
+      var p = cleanText($("product").value);
+      if (p) h += "&p=" + encodeURIComponent(p);
+    }
+    return location.href.split("#")[0] + "#" + h;
+  }
+  var touched = false;   // an untouched page keeps the clean URL the visitor arrived on
+  function syncHash() {
+    if (!touched) return;
+    try { history.replaceState(null, "", "#" + shareUrl(false).split("#")[1]); }
+    catch (e) { /* replaceState is rate-limited in some browsers; Copy link still works */ }
+  }
+
+  $("niche").addEventListener("change", function () {
+    state.niche = this.value; state.i = 0; touched = true; render(); syncHash();
+  });
+  $("product").addEventListener("input", render);   // no syncHash: the hash never carries this
+  $("again").addEventListener("click", function () { state.i++; touched = true; render(); syncHash(); });
   $("copyprompt").addEventListener("click", function () { copy(promptText(), $("copiedprompt")); });
   $("copyall").addEventListener("click", function () { copy(fullScript(), $("copiedall")); });
+  $("copylink").addEventListener("click", function () { copy(shareUrl(true), $("copiedlink")); });
 
-  var btns = document.querySelectorAll(".fmt");
   Array.prototype.forEach.call(btns, function (b) {
     b.addEventListener("click", function () {
       Array.prototype.forEach.call(btns, function (o) { o.classList.remove("on"); o.setAttribute("aria-checked", "false"); });
       b.classList.add("on"); b.setAttribute("aria-checked", "true");
       state.fmt = b.getAttribute("data-fmt");
-      render();
+      touched = true;
+      render(); syncHash();
     });
   });
 
+  // Pasting a different link into the same open tab should rebuild the script, not do nothing.
+  // replaceState never fires this, so our own writes cannot loop back through here.
+  window.addEventListener("hashchange", function () {
+    if (restore(parseHash())) { syncControls(); render(); }
+  });
+
+  if (restore(parseHash())) { touched = true; syncControls(); }
   render();
 })();
 </script>
