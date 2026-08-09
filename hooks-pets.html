@@ -115,7 +115,15 @@ h1 em{font-style:italic;font-weight:400;color:var(--glow)}
 footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:var(--mist-dim);font-size:13px}
 footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;color:var(--mist);margin-bottom:10px}
 @media(max-width:640px){
-  nav a:not(:last-child):not(:nth-last-child(2)){display:none}
+  /* Nav labels WRAP on a phone, they are never hidden. "Keep the last two" was a
+     POSITION rule wearing a layout rule's clothes: it dropped the العربية switch on every
+     page whose switch is not last, and on these nine pages the switch is FIRST — so the one
+     visitor we can identify as valuable (Arabic earns 3.5% CTR, English 0%) had no way to
+     reach their own language on a phone. index.html settled on wrapping, the whole Arabic
+     cluster already wrapped; this is the rest of the house catching up. Lane #45. */
+  header.site{flex-wrap:wrap;gap:12px}
+  nav{display:flex;flex-wrap:wrap;row-gap:8px}
+  nav a{margin-left:0;margin-right:clamp(14px,4vw,26px);font-size:12px}
   .hooklist{padding:8px 22px}
 }
 </style>

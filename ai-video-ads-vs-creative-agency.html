@@ -157,7 +157,13 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
   .cc{border-left:none;border-top:1px solid var(--line)}
 }
 @media(max-width:640px){
-  nav a:not(:last-child):not(:nth-last-child(2)){display:none}
+  /* Nav labels WRAP on a phone, they are never hidden — the house rule since index.html
+     adopted it, and the Arabic cluster before that. The old "keep the last two" rule is a
+     POSITION rule: it survives only while the item you care about happens to sit last.
+     See lane #45. */
+  header.site{flex-wrap:wrap;gap:12px}
+  nav{display:flex;flex-wrap:wrap;row-gap:8px}
+  nav a{margin-left:0;margin-right:clamp(14px,4vw,26px);font-size:12px}
 }
 </style>
 <script type="application/ld+json">

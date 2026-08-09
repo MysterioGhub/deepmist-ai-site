@@ -112,10 +112,13 @@ footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);d
 footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;color:var(--mist);margin-bottom:10px}
 
 @media(max-width:640px){
-  /* Show the last TWO nav items, not one. The single-item rule this cluster shipped
-     collapsed the whole nav to "Home" on a phone, which is where most of this traffic
-     reads — a tools link nobody on mobile could see would not have fixed anything. */
-  nav a:not(:last-child):not(:nth-last-child(2)){display:none}
+  /* The history of this one rule, ending here: keep-the-last-ONE collapsed the nav to "Home",
+     keep-the-last-TWO added the switch back on this page by luck of ordering — both were
+     POSITION rules, and on ten sibling pages the same rule deleted the العربية switch. Nav
+     labels now WRAP; nothing is hidden, matching index.html and the Arabic cluster. Lane #45. */
+  header.site{flex-wrap:wrap;gap:12px}
+  nav{display:flex;flex-wrap:wrap;row-gap:8px}
+  nav a{margin-left:0;margin-right:clamp(14px,4vw,26px);font-size:12px}
 }
 </style>
 <script type="application/ld+json">
