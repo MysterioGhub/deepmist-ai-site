@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Same Ad, Three Hooks — Deep Mist AI</title>
+<meta name="description" content="Three AI video ads for a product we invented, identical except for the opening line. Watch all three and judge which hook you would keep for your DTC brand.">
+<link rel="canonical" href="https://deepmiststudio.com/same-ad-three-hooks.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deepmiststudio.com/same-ad-three-hooks.html">
+<meta property="og:title" content="Same Ad, Three Hooks — Deep Mist AI">
+<meta property="og:description" content="An AI video ad shown three ways, identical but for the opening line. Watch all three, judge which hook you keep.">
+<meta property="og:image" content="https://deepmiststudio.com/media/og/og-same-ad-three-hooks.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Same film. Three different hooks.">
+<meta property="og:site_name" content="Deep Mist AI">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Same Ad, Three Hooks — Deep Mist AI">
+<meta name="twitter:description" content="An AI video ad shown three ways, identical but for the opening line. Watch all three, judge which hook you keep.">
+<meta name="twitter:image" content="https://deepmiststudio.com/media/og/og-same-ad-three-hooks.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0d0e;
+  --ink-2:#111416;
+  --mist:#c9d4d2;
+  --mist-dim:#77837f;
+  --glow:#8ff0d4;
+  --line:rgba(201,212,210,.14);
+  --serif:"Fraunces",serif;
+  --sans:"Archivo",sans-serif;
+  --wide:"Archivo Expanded",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--mist);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+::selection{background:var(--glow);color:var(--ink)}
+
+.fog{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.fog i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+.fog i:nth-child(1){width:60vw;height:60vw;left:-20vw;top:-25vw;background:radial-gradient(circle,#1d3a33,transparent 65%)}
+.fog i:nth-child(2){width:50vw;height:50vw;right:-18vw;top:20vh;background:radial-gradient(circle,#15272e,transparent 65%)}
+
+main,header.site,footer.site{position:relative;z-index:2}
+
+header.site{display:flex;justify-content:space-between;align-items:center;padding:28px clamp(20px,5vw,64px);border-bottom:1px solid var(--line)}
+.wordmark{font-family:var(--wide);font-weight:600;font-size:14px;letter-spacing:.34em;color:var(--mist);text-decoration:none;text-transform:uppercase}
+.wordmark b{color:var(--glow);font-weight:600}
+nav a{color:var(--mist-dim);text-decoration:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-left:clamp(16px,3vw,40px);transition:color .3s}
+nav a:hover{color:var(--glow)}
+
+.btn{display:inline-block;padding:16px 34px;border-radius:100px;font-family:var(--wide);font-size:13px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:transform .3s,box-shadow .3s}
+.btn-solid{background:var(--glow);color:var(--ink);font-weight:600}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(143,240,212,.25)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+.intro{padding-top:clamp(56px,9vh,96px)}
+.crumb{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist-dim);margin-bottom:26px}
+.crumb a{color:var(--mist-dim);text-decoration:none;border-bottom:1px solid var(--line);transition:color .3s,border-color .3s}
+.crumb a:hover{color:var(--glow);border-color:var(--glow)}
+.eyebrow{font-family:var(--wide);font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--glow);margin-bottom:34px;display:flex;align-items:center;gap:16px}
+.eyebrow::before{content:"";display:block;width:44px;height:1px;background:var(--glow)}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(36px,5.6vw,72px);line-height:1.05;letter-spacing:-.015em;color:#e9efee;max-width:16ch}
+h1 em{font-style:italic;font-weight:400;color:var(--glow)}
+.lede{max-width:620px;margin-top:32px;font-size:clamp(16px,1.5vw,19px);color:var(--mist-dim)}
+.specpill{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:10px 20px;border:1px solid rgba(143,240,212,.3);border-radius:100px;font-size:13px;color:var(--glow);letter-spacing:.04em}
+.specpill b{font-weight:500;color:var(--mist)}
+
+h3.sec{font-family:var(--wide);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#e9efee;margin-bottom:22px}
+
+/* the argument */
+.premise{margin-top:clamp(52px,7vh,84px);border:1px solid var(--line);border-radius:22px;padding:clamp(30px,4vw,44px);background:linear-gradient(160deg,rgba(143,240,212,.05),transparent 62%)}
+.premisep{max-width:680px;color:var(--mist-dim);font-size:15.5px}
+.premisep + .premisep{margin-top:14px}
+.premisep b{color:var(--mist);font-weight:500}
+
+/* the three cuts */
+.cuts{margin-top:clamp(52px,7vh,84px)}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,34px);align-items:start}
+.cut{min-width:0}
+.cutlabel{display:flex;align-items:center;gap:12px;font-family:var(--wide);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--glow);font-weight:600;margin-bottom:14px}
+.cutn{color:var(--mist-dim);letter-spacing:.16em}
+.cutline{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(19px,2.1vw,24px);line-height:1.25;color:#e9efee;margin-bottom:18px;min-height:3.75em}
+.player{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#000;line-height:0}
+.player video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
+.cutwhy{margin-top:16px;font-size:14.5px;color:var(--mist-dim)}
+
+/* what does not change */
+.same{margin-top:clamp(52px,7vh,84px);border:1px solid var(--line);border-radius:22px;padding:clamp(30px,4vw,44px);background:linear-gradient(160deg,rgba(201,212,210,.03),transparent 60%)}
+.sameline{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(22px,3vw,34px);line-height:1.2;color:#e9efee;max-width:22ch}
+.samewhy{margin-top:22px;max-width:680px;color:var(--mist-dim);font-size:15.5px}
+.samewhy b{color:var(--mist);font-weight:500}
+.compare{margin-top:30px}
+.compare img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:16px}
+.compare figcaption{margin-top:12px;font-size:12.5px;color:var(--mist-dim);letter-spacing:.02em;max-width:680px}
+
+/* build steps */
+.built{margin-top:clamp(52px,7vh,84px)}
+.steplist{list-style:none;border:1px solid var(--line);border-radius:18px;padding:6px 28px;background:linear-gradient(160deg,rgba(201,212,210,.03),transparent 60%);max-width:820px}
+.steplist li{display:flex;gap:22px;padding:22px 0;border-top:1px solid var(--line)}
+.steplist li:first-child{border-top:none}
+.steplist .sn{font-family:var(--wide);font-size:12px;letter-spacing:.16em;color:var(--glow);flex:0 0 auto;padding-top:3px}
+.steplist h4{font-family:var(--wide);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#e9efee;margin-bottom:8px;font-weight:600}
+.steplist p{font-size:15px;color:var(--mist-dim)}
+.specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:22px;max-width:820px}
+.spec{border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.spec dt{font-family:var(--wide);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--glow);margin-bottom:6px}
+.spec dd{font-size:14px;color:var(--mist)}
+
+/* the brief */
+.brief{margin-top:clamp(52px,7vh,84px);border:1px solid var(--line);border-radius:18px;padding:30px 28px;background:linear-gradient(160deg,rgba(201,212,210,.03),transparent 60%);max-width:820px}
+.brief .row{padding:14px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(94px,auto) 1fr;gap:18px;align-items:baseline}
+.brief .row:first-of-type{border-top:none}
+.brief dt{font-family:var(--wide);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--glow)}
+.brief dd{font-size:15px;color:var(--mist)}
+
+/* watch for */
+.craft{margin-top:clamp(52px,7vh,84px)}
+.pts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.pt{border:1px solid var(--line);border-radius:18px;padding:26px 24px;background:linear-gradient(160deg,rgba(201,212,210,.03),transparent 60%)}
+.pt h4{font-family:var(--wide);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--glow);margin-bottom:12px;font-weight:600}
+.pt p{font-size:15px;color:var(--mist-dim)}
+
+.honesty{margin-top:clamp(52px,7vh,84px);border:1px solid var(--line);border-radius:18px;padding:34px 30px;background:linear-gradient(160deg,rgba(143,240,212,.045),transparent 65%)}
+.honesty p{color:var(--mist-dim);font-size:15px;max-width:760px}
+.honesty p + p{margin-top:14px}
+.honesty strong{color:var(--mist);font-weight:500}
+
+.more{margin-top:clamp(52px,7vh,84px)}
+.nichelinks{display:flex;flex-wrap:wrap;gap:12px}
+.nichelink{display:inline-block;padding:12px 22px;border:1px solid var(--line);border-radius:100px;color:var(--mist);text-decoration:none;font-size:14px;transition:border-color .3s,color .3s}
+.nichelink:hover{border-color:rgba(143,240,212,.45);color:var(--glow)}
+.nichelink.all{border-color:rgba(143,240,212,.3);color:var(--glow)}
+
+.close{padding-top:clamp(56px,8vh,96px);padding-bottom:clamp(70px,10vh,110px)}
+.close h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,4.4vw,52px);line-height:1.1;color:#e9efee;max-width:18ch}
+.close h2 em{font-style:italic;font-weight:400;color:var(--glow)}
+.cta-row{margin-top:40px;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.cta-row .alt{font-size:14px;color:var(--mist-dim);max-width:360px}
+.cta-row .alt a{color:var(--glow);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .3s}
+.cta-row .alt a:hover{border-color:var(--glow)}
+
+footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:var(--mist-dim);font-size:13px}
+footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;color:var(--mist);margin-bottom:10px}
+
+@media(max-width:860px){
+  /* Two up, then the third wraps under. The players stay side by side as long as they can,
+     because a comparison you have to scroll between is not a comparison. */
+  .trio{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cutline{min-height:0}
+}
+@media(max-width:640px){
+  /* Nav labels WRAP on a phone, they are never hidden — the house rule since index.html
+     adopted it, and the Arabic cluster before that. See lane #45. */
+  header.site{flex-wrap:wrap;gap:12px}
+  nav{display:flex;flex-wrap:wrap;row-gap:8px}
+  nav a{margin-left:0;margin-right:clamp(14px,4vw,26px);font-size:12px}
+  .trio{grid-template-columns:1fr;gap:34px}
+  .player{max-width:320px}
+  /* The three-up still is the page's glanceable proof, and inside the card's own padding it
+     measured 273px on a 375px screen — about 91px per face. Cancelling the card padding for
+     this figure alone puts it back to 335px. Measured, not estimated. */
+  .compare{margin-left:calc(-1 * clamp(30px,4vw,44px));margin-right:calc(-1 * clamp(30px,4vw,44px))}
+  .compare img{border-radius:0;border-left:none;border-right:none}
+  .compare figcaption{padding:0 clamp(30px,4vw,44px)}
+  .steplist{padding:6px 20px}
+  .steplist li{flex-direction:column;gap:10px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://deepmiststudio.com/#org",
+      "name": "Deep Mist AI",
+      "legalName": "Deep Mist AI FZE LLC",
+      "url": "https://deepmiststudio.com/",
+      "logo": "https://deepmiststudio.com/media/og/og-home.jpg",
+      "description": "AI video ad studio producing UGC-style product ads in English and Arabic. Every video is 100% AI-generated and disclosed as such.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ajman Media City",
+        "addressCountry": "AE"
+      },
+      "sameAs": [
+        "https://www.fiverr.com/bram000"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://deepmiststudio.com/#website",
+      "url": "https://deepmiststudio.com/",
+      "name": "Deep Mist AI",
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://deepmiststudio.com/same-ad-three-hooks.html#article",
+      "url": "https://deepmiststudio.com/same-ad-three-hooks.html",
+      "mainEntityOfPage": "https://deepmiststudio.com/same-ad-three-hooks.html",
+      "headline": "Same Ad, Three Hooks — Deep Mist AI",
+      "description": "Three AI video ads for a product we invented, identical except for the opening line. Watch all three and judge which hook you would keep for your DTC brand.",
+      "image": "https://deepmiststudio.com/media/og/og-same-ad-three-hooks.jpg",
+      "inLanguage": "en",
+      "datePublished": "2026-08-10",
+      "dateModified": "2026-08-10",
+      "author": {
+        "@id": "https://deepmiststudio.com/#org"
+      },
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      },
+      "isPartOf": {
+        "@id": "https://deepmiststudio.com/#website"
+      },
+      "video": [
+        {
+          "@id": "https://deepmiststudio.com/same-ad-three-hooks.html#video-1"
+        },
+        {
+          "@id": "https://deepmiststudio.com/same-ad-three-hooks.html#video-2"
+        },
+        {
+          "@id": "https://deepmiststudio.com/same-ad-three-hooks.html#video-3"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://deepmiststudio.com/same-ad-three-hooks.html#video-1",
+      "name": "CORVA — The Friction Open (AI-generated vertical ad)",
+      "description": "CORVA weighted heated sleep mask ad. Opening line: \"It's late, your mind's still racing, and the room won't go dark enough.\" The rest of the cut is identical to the other two.",
+      "contentUrl": "https://deepmiststudio.com/media/corva-hook-1.mp4",
+      "thumbnailUrl": "https://deepmiststudio.com/media/corva-hook-1-poster.jpg",
+      "uploadDate": "2026-08-10",
+      "duration": "PT10S",
+      "width": 720,
+      "height": 1280,
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://deepmiststudio.com/same-ad-three-hooks.html#video-2",
+      "name": "CORVA — The Payoff Open (AI-generated vertical ad)",
+      "description": "CORVA weighted heated sleep mask ad. Opening line: \"Honestly, I didn't think winding down could feel this easy every night.\" The rest of the cut is identical to the other two.",
+      "contentUrl": "https://deepmiststudio.com/media/corva-hook-2.mp4",
+      "thumbnailUrl": "https://deepmiststudio.com/media/corva-hook-2-poster.jpg",
+      "uploadDate": "2026-08-10",
+      "duration": "PT10S",
+      "width": 720,
+      "height": 1280,
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://deepmiststudio.com/same-ad-three-hooks.html#video-3",
+      "name": "CORVA — The Loop Open (AI-generated vertical ad)",
+      "description": "CORVA weighted heated sleep mask ad. Opening line: \"It's not the dark that does it — it's the weight and the warmth.\" The rest of the cut is identical to the other two.",
+      "contentUrl": "https://deepmiststudio.com/media/corva-hook-3.mp4",
+      "thumbnailUrl": "https://deepmiststudio.com/media/corva-hook-3-poster.jpg",
+      "uploadDate": "2026-08-10",
+      "duration": "PT10S",
+      "width": 720,
+      "height": 1280,
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Deep Mist AI",
+          "item": "https://deepmiststudio.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How we made it",
+          "item": "https://deepmiststudio.com/#work"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "CORVA hook test"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="fog"><i></i><i></i></div>
+
+<header class="site">
+  <a class="wordmark" href="index.html">Deep<b>Mist</b>&nbsp;AI</a>
+  <nav>
+    <a href="index.html#work">Work</a>
+    <a href="hooks.html">Hooks</a>
+    <a href="index.html#services">Services</a>
+    <a href="free-audit.html">Free Audit</a>
+    <a href="tools.html">Tools</a>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap intro">
+    <p class="crumb"><a href="index.html#work">The demo reel</a> &nbsp;/&nbsp; CORVA hook test</p>
+    <div class="eyebrow">Hook Test</div>
+    <h1>The same ad, <em>three different hooks,</em> you decide.</h1>
+    <p class="lede">Three vertical ads for CORVA, a weighted and gently heated sleep mask we invented for this page, sit side by side here. They are the same film in every respect but one: the opening line the presenter speaks. Same person, same room, same closing line. Every frame is AI-generated. Watch all three and decide which opening you would keep.</p>
+    <div class="specpill"><b>CORVA is a brand we invented.</b> Self-initiated demo, not client work.</div>
+
+    <div class="premise">
+      <h3 class="sec">Why these three can be compared at all</h3>
+      <p class="premisep">Across the three ads, nothing moves except the opening line itself. The room, the sweater, the light, the framing and the final spoken line all stay fixed. Hold everything else still, and the hook becomes the only variable a viewer is reacting to.</p>
+      <p class="premisep">Three ads produced separately can differ in countless ways, so a difference in response could come from anywhere. Here, because everything around the opening is pinned, whatever you respond to differently comes down to the opening — the line and the way it is said — and not to the production around it.</p>
+    </div>
+
+    <div class="cuts">
+      <h3 class="sec">Three openings, one ad</h3>
+      <div class="trio">
+        <figure class="cut">
+          <figcaption class="cutlabel"><span class="cutn">01</span>The Friction Open</figcaption>
+          <p class="cutline">&ldquo;It's late, your mind's still racing, and the room won't go dark enough.&rdquo;</p>
+          <div class="player">
+            <video src="media/corva-hook-1.mp4" poster="media/corva-hook-1-poster.jpg" controls playsinline preload="none"></video>
+          </div>
+          <p class="cutwhy">This opening names the friction before offering relief, so the viewer leans in because the moment already fits their evening. It suits comfort and wind-down products, and buyers whose audience already feels the problem and needs no education — only the relief of being understood.</p>
+        </figure>
+        <figure class="cut">
+          <figcaption class="cutlabel"><span class="cutn">02</span>The Payoff Open</figcaption>
+          <p class="cutline">&ldquo;Honestly, I didn't think winding down could feel this easy every night.&rdquo;</p>
+          <div class="player">
+            <video src="media/corva-hook-2.mp4" poster="media/corva-hook-2-poster.jpg" controls playsinline preload="none"></video>
+          </div>
+          <p class="cutwhy">The payoff arrives before the product has earned an explanation, betting that the felt ease does the persuading. It suits aspirational comfort buys, and buyers whose category is crowded with problem-led ads, since leading with the reward is a posture their competitors rarely take.</p>
+        </figure>
+        <figure class="cut">
+          <figcaption class="cutlabel"><span class="cutn">03</span>The Loop Open</figcaption>
+          <p class="cutline">&ldquo;It's not the dark that does it — it's the weight and the warmth.&rdquo;</p>
+          <div class="player">
+            <video src="media/corva-hook-3.mp4" poster="media/corva-hook-3-poster.jpg" controls playsinline preload="none"></video>
+          </div>
+          <p class="cutwhy">By withholding the answer, the opening builds a small mystery, so attention carries into the body. It suits considered purchases and analytical buyers whose audience likes to feel clever, where a teasing claim invites them to stay and learn the rest.</p>
+        </figure>
+      </div>
+    </div>
+
+    <div class="same">
+      <h3 class="sec">The part that never changes</h3>
+      <p class="sameline">&ldquo;Now I just put this on, let the warmth do its thing, and drift.&rdquo;</p>
+      <p class="samewhy">The closing line had to land after any of the three openings, which is the real constraint on writing it. It cannot resolve one angle better than another, so it stays even-handed about the problem, the payoff and the unclosed loop alike, and the opening stays the only thing that moves.</p>
+      <p class="samewhy"><b>This is one render, not three matched ones.</b> The back half of every cut is the same file, placed behind each opening in the edit, and the closing card reading &ldquo;Warm, weighted, yours.&rdquo; is drawn on in the same pass. We then compared the finished files against each other frame by frame, because a build script doing the right thing and a shipped file being right are different claims.</p>
+      <figure class="compare">
+        <img src="media/corva-hooks-compare.jpg" alt="The same moment from all three cuts, side by side: the same presenter, sweater, mask, headboard and lamp in each, with only her expression differing." loading="lazy" width="2160" height="1280">
+        <figcaption>All three ads at the same moment: same presenter, same sweater, same headboard, same gray mask. Only the spoken opening line differs.</figcaption>
+      </figure>
+    </div>
+
+    <div class="built">
+      <h3 class="sec">How it was built</h3>
+      <ol class="steplist">
+        <li><span class="sn">01</span><div><h4>One still, not three</h4><p>A single vertical image of the presenter holding the mask, generated at 9:16. Every one of the four video renders on this page starts from that same image, which is why the room, the sweater, the lamp and the framing are not merely similar across the three cuts. They are the same frame.</p></div></li>
+        <li><span class="sn">02</span><div><h4>Three openings</h4><p>That still is fed to Seedance 2.5 as the first frame, three times, changing only the spoken line and its delivery. The voice is generated in the same pass as the picture, so the lip-sync comes out of the render rather than being dubbed on afterwards.</p></div></li>
+        <li><span class="sn">03</span><div><h4>One body, reused</h4><p>The back half is a fourth render from the same still, made once and placed behind all three openings. It is not re-generated per cut, so there is nothing for it to drift into.</p></div></li>
+        <li><span class="sn">04</span><div><h4>End card in the edit</h4><p>The closing card is drawn by ffmpeg, not by the video model. Generated video renders lettering unreliably, and a mangled brand name on a portfolio piece is worse than no brand name.</p></div></li>
+        <li><span class="sn">05</span><div><h4>Check before keep</h4><p>The finished files are read back with ffprobe and compared frame by frame, not eyeballed: the shared half of the three cuts had to measure as the same footage before this page could say it was.</p></div></li>
+      </ol>
+      <div class="specgrid">
+        <div class="spec"><dt>Format</dt><dd>9:16 vertical, 720&#215;1280, 30 fps</dd></div>
+        <div class="spec"><dt>Runtime</dt><dd>10.1 seconds each, audio included</dd></div>
+        <div class="spec"><dt>Renders</dt><dd>Four &mdash; three openings, one shared body</dd></div>
+        <div class="spec"><dt>Stills</dt><dd>One, shared by all four renders</dd></div>
+        <div class="spec"><dt>Assembly &amp; QA</dt><dd>ffmpeg / ffprobe</dd></div>
+        <div class="spec"><dt>On location</dt><dd>Nobody. No crew, no samples shipped</dd></div>
+      </div>
+    </div>
+
+    <div class="brief">
+      <h3 class="sec">The brief we wrote ourselves</h3>
+      <dl>
+        <div class="row"><dt>Product</dt><dd>A weighted, gently heated sleep mask, charcoal-gray, no logo.</dd></div>
+        <div class="row"><dt>Audience</dt><dd>DTC brand owners and marketers judging whether an AI studio delivers.</dd></div>
+        <div class="row"><dt>Constraint</dt><dd>AI footage only, one vertical shot, the body identical across all three.</dd></div>
+      </dl>
+    </div>
+
+    <div class="craft">
+      <h3 class="sec">What to watch for</h3>
+      <div class="pts">
+        <div class="pt"><h4>The handover</h4><p>The opening and the body are separate renders, so a real cut sits where they meet. We left it visible rather than dissolving it away.</p></div>
+        <div class="pt"><h4>The light, not a lamp</h4><p>No lamp is in frame. The warm side-light and the shadow it leaves across her far cheek are what say evening.</p></div>
+        <div class="pt"><h4>The blank mask</h4><p>No logo sits on the charcoal-gray fabric, so the mask reads as a comfort object rather than a branded prop waiting to be sold.</p></div>
+      </div>
+    </div>
+
+    <div class="honesty">
+      <h3 class="sec">What this page is not</h3>
+      <p>Every frame in these ads is AI-generated. CORVA does not exist outside this page — no client hired us, and the ads have never run as paid media, so we claim no performance. With a real product the craft would stay the same, but the results would finally be measurable.</p>
+      <p><strong>We do not know which of these three works better, and this page cannot tell you.</strong> There is no view count, no watch time and no click-through rate behind any of it. To decide, take the versions to your own audience and your own spend: run them as a small, even test, watch where attention holds and where it drops, and keep the opening your viewers reward. The answer belongs to them.</p>
+      <p>We have no published reviews yet, so we are not going to borrow credibility we haven't earned. <strong>No client names, no engagement numbers, no invented case studies.</strong> What we can show you is the work and the method, in full, and let you judge whether it clears your bar.</p>
+    </div>
+
+    <div class="more">
+      <h3 class="sec">More breakdowns and free hooks</h3>
+      <div class="nichelinks">
+        <a class="nichelink" href="made-lumen-sunrise-lamp-ad.html">How we made the Lumen ad</a>
+        <a class="nichelink" href="made-aurelia-skincare-ad.html">How we made the Aurelia ad</a>
+        <a class="nichelink" href="ad-script-builder.html">Build a script from a hook — free</a>
+        <a class="nichelink" href="hooks-home-kitchen.html">Home &amp; Kitchen hooks</a>
+        <a class="nichelink all" href="hooks.html">The full free hook library</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap close">
+    <h2>Get three hooks <em>for your product,</em> free, no email.</h2>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="free-audit.html">Get 3 custom hooks — free</a>
+      <span class="alt">Or skip ahead and <a href="https://www.fiverr.com/bram000">brief us on Fiverr</a> to have the whole ad built — script, presenter and edit.</span>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div><div class="fm">Deep Mist AI FZE LLC</div>Ajman Media City Free Zone, United Arab Emirates<br>Licensed media production company · Est. 2019</div>
+  <div style="text-align:right"><div class="fm">Honestly synthetic.</div>Every frame AI-generated. Every claim human-checked.<br>© 2026 Deep Mist AI</div>
+</footer>
+<script src="js/analytics.js" defer></script>
+</body>
+</html>
