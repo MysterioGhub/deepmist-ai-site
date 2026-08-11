@@ -83,7 +83,11 @@ h1 .hl{color:var(--glow)}
 .howto li:first-child{border-top:none}
 .howto li::before{content:counter(s,arabic-indic) ". ";color:var(--glow);font-weight:600;font-size:14px}
 
-.hooks{padding:clamp(56px,8vh,92px) 0 0}
+/* padding-TOP, not a three-value padding shorthand: this element also carries .wrap, whose horizontal
+   padding IS the phone gutter, and the three-value shorthand silently resets it to zero.
+   Live on 19 pages until 2026-08-11 — the eyebrow and the bordered hook list ran edge to
+   edge at 375px. Same class as the 24-page gutter defect; found by measuring a box. */
+.hooks{padding-top:clamp(56px,8vh,92px)}
 .hooklist{list-style:none;margin-top:34px;max-width:900px;border:1px solid var(--line);border-radius:18px;padding:8px 30px;background:linear-gradient(200deg,rgba(201,212,210,.03),transparent 60%)}
 .hooklist li{display:flex;gap:22px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line);font-family:var(--serif);font-size:clamp(19px,1.9vw,23px);line-height:1.65;color:#e9efee}
 .hooklist li:first-child{border-top:none}
@@ -285,6 +289,12 @@ footer .end{text-align:end}
         {
           "@type": "ListItem",
           "position": 2,
+          "name": "مكتبة الجمل الافتتاحية المجانية",
+          "item": "https://deepmiststudio.com/hooks-ar.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
           "name": "عطور وعود"
         }
       ]
@@ -310,7 +320,7 @@ footer .end{text-align:end}
 
 <main>
   <div class="wrap intro">
-    <p class="crumb"><a href="index-ar.html">Deep Mist AI</a> &nbsp;/&nbsp; عطور وعود</p>
+    <p class="crumb"><a href="index-ar.html">Deep Mist AI</a> &nbsp;/&nbsp; <a href="hooks-ar.html">مكتبة الجمل الافتتاحية المجانية</a> &nbsp;/&nbsp; عطور وعود</p>
     <div class="eyebrow">مجاني — بدون تسجيل</div>
     <h1>كيف تبيع <span class="hl">الرائحة</span> عبر الشاشة؟</h1>
     <p class="lede">هذه مجموعة جمل افتتاحية مجانية لإعلانات العطور والعود، جاهزة لتأخذها وتعدّلها كما يناسب منتجك. والعطر أصعب ما يُعلَن عبر الفيديو: لا تُرى رائحته ولا تُشمّ من خلف الشاشة، فإمّا أن تُترجمه الإطلالة والمشهد إلى إحساس، أو يتخطّاه المُشاهد في ثانية.</p>
@@ -376,6 +386,7 @@ footer .end{text-align:end}
       <a class="nichelink" href="hooks-fitness-health-ar.html">لياقة وصحة</a>
       <a class="nichelink" href="hooks-pets-ar.html">حيوانات أليفة</a>
         <a class="nichelink all" href="ai-video-ad-studio-dubai-uae-ar.html">الاستوديو: الإمارات والخليج</a>
+        <a class="nichelink all" href="hooks-ar.html">المكتبة العربية كاملة</a>
         <a class="nichelink all" href="hooks.html">المكتبة الكاملة (بالإنجليزية)</a>
       </div>
     </div>

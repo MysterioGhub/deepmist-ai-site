@@ -78,7 +78,11 @@ h1 em{font-style:italic;font-weight:400;color:var(--glow)}
 .howto li:first-child{border-top:none}
 .howto li::before{content:counter(s) ". ";color:var(--glow);font-family:var(--wide);font-size:12px;letter-spacing:.1em}
 
-.hooks{padding:clamp(56px,8vh,92px) 0 0}
+/* padding-TOP, not a three-value padding shorthand: this element also carries .wrap, whose horizontal
+   padding IS the phone gutter, and the three-value shorthand silently resets it to zero.
+   Live on 19 pages until 2026-08-11 — the eyebrow and the bordered hook list ran edge to
+   edge at 375px. Same class as the 24-page gutter defect; found by measuring a box. */
+.hooks{padding-top:clamp(56px,8vh,92px)}
 .hooklist{list-style:none;margin-top:36px;max-width:900px;border:1px solid var(--line);border-radius:18px;padding:8px 30px;background:linear-gradient(160deg,rgba(201,212,210,.03),transparent 60%)}
 .hooklist li{display:flex;gap:22px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line);font-family:var(--serif);font-size:clamp(17px,1.7vw,20px);font-weight:300;line-height:1.4;color:#e9efee}
 .hooklist li:first-child{border-top:none}
