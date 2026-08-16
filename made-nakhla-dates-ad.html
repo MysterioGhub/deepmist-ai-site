@@ -3,26 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How We Made the KIBO Ad — Deep Mist AI</title>
-<meta name="description" content="Full breakdown of a 10-second matcha kit AI video ad: the hero still, the voiceover hook, the finished 9:16 cut. How an AI studio builds food and drink UGC.">
-<link rel="canonical" href="https://deepmiststudio.com/made-kibo-matcha-ad.html">
+<title>How We Made the NAKHLA Ad — Deep Mist AI</title>
+<meta name="description" content="How we made an Arabic AI video ad for premium chocolate-coated dates: a majlis, a gift box, a Modern Standard Arabic voice. The full production breakdown.">
+<link rel="canonical" href="https://deepmiststudio.com/made-nakhla-dates-ad.html">
+<link rel="alternate" hreflang="en" href="https://deepmiststudio.com/made-nakhla-dates-ad.html">
+<link rel="alternate" hreflang="ar" href="https://deepmiststudio.com/made-nakhla-dates-ad-ar.html">
+<link rel="alternate" hreflang="x-default" href="https://deepmiststudio.com/made-nakhla-dates-ad.html">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://deepmiststudio.com/made-kibo-matcha-ad.html">
-<meta property="og:title" content="How We Made the KIBO Ad — Deep Mist AI">
-<meta property="og:description" content="A full production breakdown of one 10-second matcha kit ad: the brief, the hook, the stack, and the finished video. Fictional brand, self-initiated.">
-<meta property="og:image" content="https://deepmiststudio.com/media/og/og-made-kibo-matcha-ad.jpg">
+<meta property="og:url" content="https://deepmiststudio.com/made-nakhla-dates-ad.html">
+<meta property="og:title" content="How We Made the NAKHLA Ad — Deep Mist AI">
+<meta property="og:description" content="How we built an Arabic dates gift box ad for the Gulf: voice first, then picture, with every step shown.">
+<meta property="og:image" content="https://deepmiststudio.com/media/og/og-made-nakhla-dates-ad.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="A matcha kit ad built sound-first">
+<meta property="og:image:alt" content="Arabic dates ad, guests do the talking">
 <meta property="og:site_name" content="Deep Mist AI">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How We Made the KIBO Ad — Deep Mist AI">
-<meta name="twitter:description" content="A full production breakdown of one 10-second matcha kit ad: the brief, the hook, the stack, and the finished video. Fictional brand, self-initiated.">
-<meta name="twitter:image" content="https://deepmiststudio.com/media/og/og-made-kibo-matcha-ad.jpg">
+<meta name="twitter:title" content="How We Made the NAKHLA Ad — Deep Mist AI">
+<meta name="twitter:description" content="How we built an Arabic dates gift box ad for the Gulf: voice first, then picture, with every step shown.">
+<meta name="twitter:image" content="https://deepmiststudio.com/media/og/og-made-nakhla-dates-ad.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@500;600&family=Cairo:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#0b0d0e;
@@ -92,6 +95,19 @@ h1 em{font-style:italic;font-weight:400;color:var(--glow)}
 .formatwhy{margin-top:18px;max-width:660px;color:var(--mist-dim);font-size:15.5px}
 .formatwhy b,.hookwhy b{color:var(--mist);font-weight:500}
 .hookwhy + .hookwhy{margin-top:14px}
+/* Arabic runs inside an LTR page. Three rules, all learned the hard way on the Arabic cluster:
+   Cairo because the Latin serif has no Arabic glyphs and the fallback is whatever the OS has;
+   letter-spacing:0 because Arabic is a connected script and tracking pulls the joins apart; and
+   unicode-bidi:isolate so a Latin brand name inside the sentence cannot reorder the line around
+   it. max-width is in em, not ch — the ch unit measures a zero, which is not an Arabic glyph. */
+.arline{font-family:"Cairo",system-ui,sans-serif;font-style:normal;letter-spacing:0;unicode-bidi:isolate;line-height:1.7;max-width:22em}
+.hookline.arline{font-size:clamp(21px,2.9vw,32px)}
+.arline.sm{font-size:17px;color:#e9efee;max-width:44em}
+.gloss{margin-top:12px;color:var(--mist-dim);font-size:15.5px;max-width:660px;font-style:italic}
+.glossnote{margin-top:10px;color:var(--mist-dim);font-size:13.5px;max-width:660px}
+.scriptbox{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.scriptbox h4{font-family:var(--wide);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#e9efee;margin-bottom:14px}
+.arnote p b{color:var(--mist);font-weight:500}
 
 /* build steps */
 .built{margin-top:clamp(52px,7vh,84px)}
@@ -188,15 +204,15 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
     },
     {
       "@type": "Article",
-      "@id": "https://deepmiststudio.com/made-kibo-matcha-ad.html#article",
-      "url": "https://deepmiststudio.com/made-kibo-matcha-ad.html",
-      "mainEntityOfPage": "https://deepmiststudio.com/made-kibo-matcha-ad.html",
-      "headline": "How We Made the KIBO Ad — Deep Mist AI",
-      "description": "Full breakdown of a 10-second matcha kit AI video ad: the hero still, the voiceover hook, the finished 9:16 cut. How an AI studio builds food and drink UGC.",
-      "image": "https://deepmiststudio.com/media/og/og-made-kibo-matcha-ad.jpg",
+      "@id": "https://deepmiststudio.com/made-nakhla-dates-ad.html#article",
+      "url": "https://deepmiststudio.com/made-nakhla-dates-ad.html",
+      "mainEntityOfPage": "https://deepmiststudio.com/made-nakhla-dates-ad.html",
+      "headline": "How We Made the NAKHLA Ad — Deep Mist AI",
+      "description": "How we made an Arabic AI video ad for premium chocolate-coated dates: a majlis, a gift box, a Modern Standard Arabic voice. The full production breakdown.",
+      "image": "https://deepmiststudio.com/media/og/og-made-nakhla-dates-ad.jpg",
       "inLanguage": "en",
-      "datePublished": "2026-07-23",
-      "dateModified": "2026-07-23",
+      "datePublished": "2026-08-16",
+      "dateModified": "2026-08-16",
       "author": {
         "@id": "https://deepmiststudio.com/#org"
       },
@@ -207,23 +223,7 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
         "@id": "https://deepmiststudio.com/#website"
       },
       "video": {
-        "@id": "https://deepmiststudio.com/made-kibo-matcha-ad.html#video"
-      }
-    },
-    {
-      "@type": "VideoObject",
-      "@id": "https://deepmiststudio.com/made-kibo-matcha-ad.html#video",
-      "name": "Kibo — Matcha starter kit (10-second AI-generated ad)",
-      "description": "A full production breakdown of one 10-second matcha kit ad: the brief, the hook, the stack, and the finished video. Fictional brand, self-initiated.",
-      "contentUrl": "https://deepmiststudio.com/media/kibo-demo.mp4",
-      "thumbnailUrl": "https://deepmiststudio.com/media/kibo-poster.jpg",
-      "uploadDate": "2026-07-23",
-      "duration": "PT10S",
-      "width": 720,
-      "height": 1280,
-      "inLanguage": "en",
-      "publisher": {
-        "@id": "https://deepmiststudio.com/#org"
+        "@id": "https://deepmiststudio.com/made-nakhla-dates-ad-ar.html#video"
       }
     },
     {
@@ -244,7 +244,7 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Kibo"
+          "name": "NAKHLA"
         }
       ]
     }
@@ -264,56 +264,68 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
     <a href="free-audit.html">Free Audit</a>
     <a href="tools.html">Tools</a>
     <a href="index.html">Home</a>
+    <a href="made-nakhla-dates-ad-ar.html" lang="ar" dir="rtl" style="color:var(--glow);letter-spacing:0">&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;</a>
   </nav>
 </header>
 
 <main>
   <div class="wrap intro">
-    <p class="crumb"><a href="index.html#work">The demo reel</a> &nbsp;/&nbsp; Kibo breakdown</p>
+    <p class="crumb"><a href="index.html#work">The demo reel</a> &nbsp;/&nbsp; NAKHLA breakdown</p>
     <div class="eyebrow">Production Breakdown</div>
-    <h1>How we made the KIBO ad <em>sound-first</em></h1>
-    <p class="lede">This is a full breakdown of one 10-second ad: the brief, the opening line, the stack, and the finished video. KIBO is a fictional brand we invented; this is a self-initiated spec ad, not client work. Food and drink is judged on texture and sound in the first second, so we led with both.</p>
-    <div class="specpill"><b>Kibo is a brand we invented.</b> Self-initiated demo, not client work.</div>
+    <h1>An Arabic dates ad where <em>guests do the talking</em></h1>
+    <p class="lede">This page is a full production breakdown of a short vertical ad for NAKHLA, a fictional dates gift box we invented for our own portfolio. No client, no brief, no order. Dates are a hospitality product in the Gulf: their value is the moment of serving, not the taste description. So the ad stages that moment.</p>
+    <div class="specpill"><b>NAKHLA is a brand we invented.</b> Self-initiated demo, not client work.</div>
 
     <div class="stage">
       <div>
         <div class="player">
-          <video src="media/kibo-demo.mp4" poster="media/kibo-poster.jpg" controls playsinline preload="none"></video>
+          <video src="media/nakhla-demo.mp4" poster="media/nakhla-poster.jpg" controls playsinline preload="none"></video>
         </div>
-        <p class="playercap">The finished ad. 10 seconds, 9:16, sound on. Every frame AI-generated. The &ldquo;portfolio demo&rdquo; watermark is ours &mdash; client deliveries ship clean.</p>
+        <p class="playercap">The finished ad. 12 seconds, 9:16, sound on. Spoken in Modern Standard Arabic; the words are written out below in Arabic and in English. Every frame AI-generated. The &ldquo;portfolio demo&rdquo; watermark is ours &mdash; client deliveries ship clean.</p>
       </div>
       <div class="brief">
         <h3>The brief we wrote ourselves</h3>
         <dl>
-          <div class="row"><dt>Product</dt><dd>KIBO, a fictional matcha starter kit.</dd></div>
-          <div class="row"><dt>Audience</dt><dd>People ready to quit an expensive latte habit.</dd></div>
-          <div class="row"><dt>Constraint</dt><dd>Ten seconds, one quiet kitchen shot, no filmed footage.</dd></div>
-          <div class="row"><dt>Format</dt><dd>Close kitchen prep · voiceover</dd></div>
+          <div class="row"><dt>Product</dt><dd>A fictional gift box of almond-stuffed, chocolate-coated dates we invented.</dd></div>
+          <div class="row"><dt>Audience</dt><dd>Gulf households and businesses buying premium hospitality gifts in date season.</dd></div>
+          <div class="row"><dt>Constraint</dt><dd>No filmed footage, a single continuous shot, runtime locked to the voiceover.</dd></div>
+          <div class="row"><dt>Format</dt><dd>Majlis presentation · talking head · spoken Arabic</dd></div>
           <div class="row"><dt>Niche</dt><dd>Food &amp; Beverage</dd></div>
         </dl>
       </div>
     </div>
 
     <div class="hookblock">
-      <h3>The opening line</h3>
-      <p class="hookline">&ldquo;POV: you quit your $7 latte habit.&rdquo;</p>
-      <p class="hookwhy">The opening line is 'POV: you quit your $7 latte habit.' It never mentions matcha. Instead it hands the viewer an identity they already want, someone who escaped an overpriced routine, and lets the drink on screen be the proof. The product arrives as the answer, not the pitch.</p>
-      <p class="formatwhy"><b>Why this format.</b> Food sells through appetite, which lives in texture and sound before any claim registers. So we kept the camera close on the prep and let a voiceover carry the line, with no face competing with the matcha for attention.</p>
+      <h3>The opening line, as it is spoken</h3>
+      <p class="hookline arline" lang="ar" dir="rtl">نخلة — تمر فاخر محشو باللوز ومغلف بالشوكولاتة.</p>
+      <p class="gloss">In English: &ldquo;NAKHLA — fine dates stuffed with almonds and coated in chocolate.&rdquo;</p>
+      <div class="scriptbox">
+        <h4>The whole spoken line</h4>
+        <p class="arline sm" lang="ar" dir="rtl">نخلة — تمر فاخر محشو باللوز ومغلف بالشوكولاتة. قدمتها لضيوفي فسألوني: من أين هذه؟</p>
+        <p class="gloss">NAKHLA — fine dates stuffed with almonds and coated in chocolate. I served them to my guests and they asked me: where are these from?</p>
+        <p class="glossnote">The English here is a translation for this page. It is not spoken in the ad, and it is not burned into the video.</p>
+      </div>
+      <p class="hookwhy">The line names the box first and then hands the ending to somebody else: the guests ask where the dates are from, and their question does the work a claim would have done badly. Praise from the seller is a claim. A question from a guest is evidence.</p>
+      <p class="formatwhy"><b>Why this format.</b> Dates are a hospitality product, sold in the room where guests are received. A presenter in a majlis opening the box toward camera restages the act of serving. The setting carries the premium feel, so the product never has to shout.</p>
     </div>
 
     <div class="built">
       <h3>How it was built</h3>
       <ol class="steplist">
-        <li><span class="sn">01</span><div><h4>Hero still</h4><p>One image, generated with Nano Banana Pro at 9:16. Framed like a phone photo rather than a product shot: the item in hand, the brand name legible on the label, light coming from somewhere plausible.</p></div></li>
-        <li><span class="sn">02</span><div><h4>Motion and voice</h4><p>That still becomes frame one. Seedance 2.0 takes it to ten seconds of 720p video and generates the audio in the same pass. Spoken lines are written into the prompt, so the delivery is lip-synced from the start instead of dubbed on afterwards.</p></div></li>
-        <li><span class="sn">03</span><div><h4>Check before keep</h4><p>Nothing survives because it looked fine as a thumbnail. We read the stream data with ffprobe, build a contact sheet of frames with ffmpeg, and compare the spoken audio against the script that was written. Takes that drift from the brief get regenerated, not patched.</p></div></li>
-        <li><span class="sn">04</span><div><h4>Finish</h4><p>The approved take is cut and packaged with ffmpeg for wherever it will run. Vertical for Reels and TikTok here; the same take can be reframed for feed or landscape if the brief asks.</p></div></li>
+        <li><span class="sn">01</span><div><h4>Script first</h4><p>The spoken line is written in Modern Standard Arabic before any image exists, and it is measured by ear rather than by word count. A script that looks short on the page can run long once it is read aloud, so it gets cut back until it sits inside the time available.</p></div></li>
+        <li><span class="sn">02</span><div><h4>Voice before picture</h4><p>The Arabic voiceover is generated with a text-to-speech model and approved as a standalone file before a single frame is drawn. This is the inversion from our English ads, where the video model generates the audio inside the same pass that generates the picture.</p></div></li>
+        <li><span class="sn">03</span><div><h4>Hero still</h4><p>One vertical image, generated with Nano Banana Pro. Framed like a phone photo rather than a studio product shot: the presenter and the product in hand, the brand name legible, and light with a plausible source in the room.</p></div></li>
+        <li><span class="sn">04</span><div><h4>Motion and lip-sync</h4><p>The still goes to Seedance 2.0 as frame one, with the approved audio file alongside it as a reference, so the mouth moves to the actual Arabic speech instead of a dub laid over it afterwards. The audio leads the picture here rather than the other way round, which is what the lip movement is following.</p></div></li>
+        <li><span class="sn">05</span><div><h4>Check before keep</h4><p>Nothing survives because it looked fine as a thumbnail. We read the stream data with ffprobe, build a contact sheet of frames with ffmpeg, and compare the spoken audio against the written script. Takes that drift from the brief get regenerated, not patched.</p></div></li>
+        <li><span class="sn">06</span><div><h4>Finish</h4><p>The approved take is cut and packaged with ffmpeg for wherever it will run. Vertical for Reels and TikTok here; the same take can be reframed for feed or landscape if the brief asks.</p></div></li>
       </ol>
       <div class="specgrid">
         <div class="spec"><dt>Format</dt><dd>9:16 vertical, 1280&#215;720 source</dd></div>
-        <div class="spec"><dt>Runtime</dt><dd>10.0 seconds, audio included</dd></div>
+        <div class="spec"><dt>Runtime</dt><dd>12.05 seconds, audio included</dd></div>
         <div class="spec"><dt>Stills</dt><dd>Nano Banana Pro</dd></div>
-        <div class="spec"><dt>Motion &amp; voice</dt><dd>Seedance 2.0, image-to-video</dd></div>
+        <div class="spec"><dt>Motion &amp; lip-sync</dt><dd>Seedance 2.0, image-to-video</dd></div>
+        <div class="spec"><dt>Voice</dt><dd>Inworld, Arabic text-to-speech</dd></div>
+        <div class="spec"><dt>Ad language</dt><dd>Modern Standard Arabic</dd></div>
         <div class="spec"><dt>Assembly &amp; QA</dt><dd>ffmpeg / ffprobe</dd></div>
         <div class="spec"><dt>On location</dt><dd>Nobody. No crew, no samples shipped</dd></div>
       </div>
@@ -322,15 +334,26 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
     <div class="craft">
       <h3>What to watch for</h3>
       <div class="pts">
-        <div class="pt"><h4>The prep sound</h4><p>Audio is generated in the same pass as the picture, so the whisking and pouring carry the appetite cue instead of music laid underneath.</p></div>
-        <div class="pt"><h4>The close framing</h4><p>The shot stays tight on the powder, the water, and the whisk, so the texture of the matcha reads before any word is spoken.</p></div>
-        <div class="pt"><h4>The kit on frame</h4><p>The matcha box and the whisk stay in frame with the KIBO name visible, so the kit reads as a real object, not a prop.</p></div>
+        <div class="pt"><h4>Mouth and voice</h4><p>You need no Arabic to check this: his lips move with the spoken words, because the voice track led and the video followed.</p></div>
+        <div class="pt"><h4>Majlis details</h4><p>The dallah, lantern, and carpet behind him do the category work, placing the box in a room of hospitality without any copy.</p></div>
+        <div class="pt"><h4>The open box</h4><p>He raises the open box in a careful grip and holds it up to the camera, letting the lamp light catch the coated dates.</p></div>
       </div>
+    </div>
+
+    <div class="honesty arnote">
+      <h3>Two things about Arabic we will not smooth over</h3>
+      <p><b>The logo on the product is in Latin letters, not Arabic ones.</b> The reason is technical and known: image models do not render connected Arabic script reliably, and it comes out malformed. We chose a clean Latin wordmark over broken Arabic type. If your brand's Arabic logotype has to appear on the product in frame, say so at the brief stage, because it changes how the shot is built.</p>
+      <p><b>The voice is Modern Standard Arabic, and it is generated, not a hired voice actor.</b> That is the right register for a pan-Gulf audience and the wrong one if you specifically need spoken Khaleeji dialect or one particular human voice. It is the single thing on this page you cannot judge for yourself if you do not speak Arabic, so we would rather write it down than let the video imply otherwise.</p>
+    </div>
+
+    <div class="honesty arnote">
+      <h3>The take we threw away</h3>
+      <p>The first version of this script was longer. It opened with a line meaning &quot;these are not ordinary dates&quot; and closed with an explicit invitation to try them. When the voiceover was generated, the Arabic reader's pace came out slower than the written length suggested and the take ran past the time available, so it was scrapped and the script rewritten shorter. The cost was real: the opening line and the closing invitation were both lost, and the guests' question was left to carry the ending alone. In Arabic, script length is measured by ear, not by counting words on the page.</p>
     </div>
 
     <div class="honesty">
       <h3>What this page is not</h3>
-      <p>Every frame here is AI-generated, and KIBO is a brand we invented for this demo. We claim no view or sales numbers, because this ad was never run as paid media. With a real product we'd shoot around the actual kit and a real pour.</p>
+      <p>Every frame is AI-generated and NAKHLA is a brand we invented. The ad never ran as paid media, so we claim no performance numbers. With a real box to ship, we would build the ad around real footage of it, and photograph the Arabic on the lid instead of working around it.</p>
       <p>We have no published reviews yet, so we are not going to borrow credibility we haven't earned. <strong>No client names, no engagement numbers, no invented case studies.</strong> What we can show you is the work and the method, in full, and let you judge whether it clears your bar.</p>
     </div>
 
@@ -338,12 +361,12 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
       <h3>More breakdowns and free hooks</h3>
       <div class="nichelinks">
       <a class="nichelink" href="made-aurelia-skincare-ad.html">Aurelia · Skincare</a>
+      <a class="nichelink" href="made-kibo-matcha-ad.html">Kibo · Food &amp; Beverage</a>
       <a class="nichelink" href="made-pawse-pet-ad.html">Pawse · Pets</a>
       <a class="nichelink" href="made-volta-electrolyte-ad.html">Volta · Fitness</a>
       <a class="nichelink" href="made-nimbus-projector-ad.html">Nimbus · Tech</a>
       <a class="nichelink" href="made-lumen-sunrise-lamp-ad.html">Lumen · Home</a>
       <a class="nichelink" href="made-misk-oud-perfume-ad.html">MISK · Arabic · Perfume</a>
-      <a class="nichelink" href="made-nakhla-dates-ad.html">NAKHLA · Arabic · Dates</a>
         <a class="nichelink" href="same-ad-three-hooks.html">The same ad with three hooks</a>
         <a class="nichelink" href="hooks-food-beverage.html">Food &amp; Beverage hooks</a>
         <a class="nichelink all" href="hooks.html">The full free hook library</a>
@@ -352,7 +375,7 @@ footer .fm{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;
   </div>
 
   <div class="wrap close">
-    <h2>We'll write three hooks <em>for your food brand</em>, free.</h2>
+    <h2>Want the guests asking about <em>your product?</em></h2>
     <div class="cta-row">
       <a class="btn btn-solid" href="free-audit.html">Get 3 custom hooks — free</a>
       <span class="alt">Or skip ahead and <a href="https://www.fiverr.com/bram000">brief us on Fiverr</a> to have the whole ad built — script, presenter and edit.</span>
