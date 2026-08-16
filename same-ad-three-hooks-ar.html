@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حين لا يتغيّر شيء إلا الافتتاحية — ديب ميست</title>
+<meta name="description" content="نسخ متطابقة من إعلان الفيديو العمودي نفسه، لكل نسخة جملتها الافتتاحية الخاصة؛ طريقة مباشرة لرؤية اختبار الافتتاحيات عمليًا قبل أن تنفق على إعلانك.">
+<link rel="canonical" href="https://deepmiststudio.com/same-ad-three-hooks-ar.html">
+<link rel="alternate" hreflang="ar" href="https://deepmiststudio.com/same-ad-three-hooks-ar.html">
+<link rel="alternate" hreflang="en" href="https://deepmiststudio.com/same-ad-three-hooks.html">
+<link rel="alternate" hreflang="x-default" href="https://deepmiststudio.com/same-ad-three-hooks.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deepmiststudio.com/same-ad-three-hooks-ar.html">
+<meta property="og:title" content="حين لا يتغيّر شيء إلا الافتتاحية — ديب ميست">
+<meta property="og:description" content="إعلانات متطابقة في كل شيء إلا الجملة الافتتاحية؛ شاهد بعينك كيف يبدو اختبار مقدمات الإعلان قبل إنفاق أي ميزانية.">
+<meta property="og:image" content="https://deepmiststudio.com/media/og/og-same-ad-three-hooks-ar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="فيلم واحد. ثلاث جمل افتتاحية.">
+<meta property="og:site_name" content="Deep Mist AI">
+<meta property="og:locale" content="ar_AE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="حين لا يتغيّر شيء إلا الافتتاحية — ديب ميست">
+<meta name="twitter:description" content="إعلانات متطابقة في كل شيء إلا الجملة الافتتاحية؛ شاهد بعينك كيف يبدو اختبار مقدمات الإعلان قبل إنفاق أي ميزانية.">
+<meta name="twitter:image" content="https://deepmiststudio.com/media/og/og-same-ad-three-hooks-ar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Archivo+Expanded:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0d0e;
+  --mist:#c9d4d2;
+  --mist-dim:#77837f;
+  --glow:#8ff0d4;
+  --line:rgba(201,212,210,.14);
+  --serif:"Amiri",serif;
+  --sans:"Cairo",sans-serif;
+  --wide:"Archivo Expanded",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+/* 1.85 rather than the English 1.6: Arabic ascenders and descenders reach further, and Cairo at
+   the same leading closes the gap between lines until the paragraph reads as a block. */
+body{background:var(--ink);color:var(--mist);font-family:var(--sans);font-size:16px;line-height:1.85;overflow-x:hidden}
+::selection{background:var(--glow);color:var(--ink)}
+
+.fog{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.fog i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+/* inset-inline, not left/right: the blobs follow the reading direction like everything else. */
+.fog i:nth-child(1){width:60vw;height:60vw;inset-inline-start:-20vw;top:-25vw;background:radial-gradient(circle,#1d3a33,transparent 65%)}
+.fog i:nth-child(2){width:50vw;height:50vw;inset-inline-end:-18vw;top:20vh;background:radial-gradient(circle,#15272e,transparent 65%)}
+
+main,header.site,footer.site{position:relative;z-index:2}
+
+header.site{display:flex;justify-content:space-between;align-items:center;padding:28px clamp(20px,5vw,64px);border-bottom:1px solid var(--line)}
+/* The wordmark is the ONE tracked-out run on this page, and it is Latin, so it keeps its
+   letter-spacing and is bidi-isolated. Every Arabic label below sets letter-spacing:0. */
+.wordmark{font-family:var(--wide);font-weight:600;font-size:14px;letter-spacing:.34em;color:var(--mist);text-decoration:none;text-transform:uppercase;direction:ltr;unicode-bidi:isolate}
+.wordmark b{color:var(--glow);font-weight:600}
+nav{display:flex;flex-wrap:wrap;align-items:center}
+nav a{color:var(--mist-dim);text-decoration:none;font-size:13.5px;letter-spacing:0;margin-inline-start:clamp(14px,2.6vw,32px);transition:color .3s}
+nav a:hover{color:var(--glow)}
+nav a.en{font-family:var(--wide);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;direction:ltr;unicode-bidi:isolate;color:var(--glow)}
+
+.btn{display:inline-block;padding:16px 34px;border-radius:100px;font-size:14px;letter-spacing:0;text-decoration:none;transition:transform .3s,box-shadow .3s}
+.btn-solid{background:var(--glow);color:var(--ink);font-weight:600}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(143,240,212,.25)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+.intro{padding-top:clamp(56px,9vh,96px)}
+.crumb{font-size:13.5px;letter-spacing:0;color:var(--mist-dim);margin-bottom:26px}
+.crumb a{color:var(--mist-dim);text-decoration:none;border-bottom:1px solid var(--line);transition:color .3s,border-color .3s}
+.crumb a:hover{color:var(--glow);border-color:var(--glow)}
+.eyebrow{font-size:13px;letter-spacing:0;color:var(--glow);margin-bottom:34px;display:flex;align-items:center;gap:16px}
+.eyebrow::before{content:"";display:block;width:44px;height:1px;background:var(--glow)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5.2vw,66px);line-height:1.35;letter-spacing:0;color:#e9efee;max-width:20ch}
+/* colour, not italics — see the header comment. */
+h1 .hl{color:var(--glow)}
+.lede{max-width:640px;margin-top:32px;font-size:clamp(16px,1.5vw,19px);color:var(--mist-dim)}
+.specpill{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:10px 20px;border:1px solid rgba(143,240,212,.3);border-radius:100px;font-size:13.5px;color:var(--glow);letter-spacing:0}
+.specpill b{font-weight:600;color:var(--mist)}
+
+h3.sec{font-size:13px;letter-spacing:0;color:#e9efee;margin-bottom:22px;font-weight:600}
+
+/* the argument */
+.premise{margin-top:clamp(52px,7vh,84px);border:1px solid var(--line);border-radius:22px;padding:clamp(30px,4vw,44px);background:linear-gradient(200deg,rgba(143,240,212,.05),transparent 62%)}
+.premisep{max-width:700px;color:var(--mist-dim);font-size:15.5px}
+.premisep + .premisep{margin-top:14px}
+
+/* the three cuts — first cut on the RIGHT, because dir=rtl orders the grid */
+.cuts{margin-top:clamp(52px,7vh,84px)}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,34px);align-items:start}
+.cut{min-width:0}
+.cutlabel{display:flex;align-items:center;gap:12px;font-size:12.5px;letter-spacing:0;color:var(--glow);font-weight:600;margin-bottom:14px}
+.cutn{color:var(--mist-dim)}
+.cutline{font-family:var(--serif);font-weight:400;font-size:clamp(19px,2.1vw,25px);line-height:1.5;color:#e9efee;margin-bottom:18px;min-height:4.5em}
+.player{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#000;line-height:0}
+.player video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
+.cutwhy{margin-top:16px;font-size:14.5px;color:var(--mist-dim)}
+
+/* what does not change */
+.same{margin-top:clamp(52px,7vh,84px);border:1px solid var(--line);border-radius:22px;padding:clamp(30px,4vw,44px);background:linear-gradient(200deg,rgba(201,212,210,.03),transparent 60%)}
+.sameline{font-family:var(--serif);font-weight:400;font-size:clamp(21px,2.9vw,33px);line-height:1.45;color:#e9efee;max-width:26ch}
+.samewhy{margin-top:22px;max-width:700px;color:var(--mist-dim);font-size:15.5px}
+.samewhy b{color:var(--mist);font-weight:600}
+.compare{margin-top:30px}
+.compare img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:16px}
+.compare figcaption{margin-top:12px;font-size:13px;color:var(--mist-dim);letter-spacing:0;max-width:700px}
+
+/* build steps */
+.built{margin-top:clamp(52px,7vh,84px)}
+.steplist{list-style:none;border:1px solid var(--line);border-radius:18px;padding:6px 28px;background:linear-gradient(200deg,rgba(201,212,210,.03),transparent 60%);max-width:840px}
+.steplist li{display:flex;gap:22px;padding:22px 0;border-top:1px solid var(--line)}
+.steplist li:first-child{border-top:none}
+.steplist .sn{font-size:13px;letter-spacing:0;color:var(--glow);flex:0 0 auto;padding-top:5px}
+.steplist h4{font-size:13px;letter-spacing:0;color:#e9efee;margin-bottom:8px;font-weight:600}
+.steplist p{font-size:15px;color:var(--mist-dim)}
+.specgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:22px;max-width:840px}
+.spec{border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.spec dt{font-size:12px;letter-spacing:0;color:var(--glow);margin-bottom:6px;font-weight:600}
+.spec dd{font-size:14.5px;color:var(--mist)}
+
+/* the brief */
+.brief{margin-top:clamp(52px,7vh,84px);border:1px solid var(--line);border-radius:18px;padding:30px 28px;background:linear-gradient(200deg,rgba(201,212,210,.03),transparent 60%);max-width:840px}
+.brief .row{padding:14px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(84px,auto) 1fr;gap:18px;align-items:baseline}
+.brief .row:first-of-type{border-top:none}
+.brief dt{font-size:12px;letter-spacing:0;color:var(--glow);font-weight:600}
+.brief dd{font-size:15px;color:var(--mist)}
+
+/* watch for */
+.craft{margin-top:clamp(52px,7vh,84px)}
+.pts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.pt{border:1px solid var(--line);border-radius:18px;padding:26px 24px;background:linear-gradient(200deg,rgba(201,212,210,.03),transparent 60%)}
+.pt h4{font-size:13px;letter-spacing:0;color:var(--glow);margin-bottom:12px;font-weight:600}
+.pt p{font-size:15px;color:var(--mist-dim)}
+
+.honesty{margin-top:clamp(52px,7vh,84px);border:1px solid var(--line);border-radius:18px;padding:34px 30px;background:linear-gradient(200deg,rgba(143,240,212,.045),transparent 65%)}
+.honesty p{color:var(--mist-dim);font-size:15px;max-width:780px}
+.honesty p + p{margin-top:14px}
+.honesty strong{color:var(--mist);font-weight:600}
+
+.more{margin-top:clamp(52px,7vh,84px)}
+.nichelinks{display:flex;flex-wrap:wrap;gap:12px}
+.nichelink{display:inline-block;padding:12px 22px;border:1px solid var(--line);border-radius:100px;color:var(--mist);text-decoration:none;font-size:14.5px;transition:border-color .3s,color .3s}
+.nichelink:hover{border-color:rgba(143,240,212,.45);color:var(--glow)}
+.nichelink.all{border-color:rgba(143,240,212,.3);color:var(--glow)}
+
+.close{padding-top:clamp(56px,8vh,96px);padding-bottom:clamp(70px,10vh,110px)}
+.close h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4.2vw,48px);line-height:1.4;color:#e9efee;max-width:22ch}
+.close h2 .hl{color:var(--glow)}
+.cta-row{margin-top:40px;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.cta-row .alt{font-size:14.5px;color:var(--mist-dim);max-width:400px}
+.cta-row .alt a{color:var(--glow);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .3s}
+.cta-row .alt a:hover{border-color:var(--glow)}
+
+footer.site{border-top:1px solid var(--line);padding:54px clamp(20px,5vw,64px);display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:var(--mist-dim);font-size:13.5px}
+footer .fm{color:var(--mist);margin-bottom:10px;font-weight:600;letter-spacing:0}
+footer .fm.latin{font-family:var(--wide);letter-spacing:.3em;text-transform:uppercase;direction:ltr;unicode-bidi:isolate}
+/* text-align:end, not left: in RTL the closing column sits on the left and its text follows. */
+footer .col2{text-align:end}
+
+@media(max-width:860px){
+  /* Two up, then the third wraps under. The players stay side by side as long as they can,
+     because a comparison you have to scroll between is not a comparison. */
+  .trio{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cutline{min-height:0}
+}
+@media(max-width:640px){
+  /* Nav labels WRAP on a phone, they are never hidden (lane #45, and check M enforces it). */
+  header.site{flex-wrap:wrap;gap:12px}
+  nav a{margin-inline-start:0;margin-inline-end:clamp(12px,3.6vw,24px);font-size:13px;display:inline-flex;align-items:center;min-height:28px}
+  .trio{grid-template-columns:1fr;gap:34px}
+  .player{max-width:320px}
+  /* The three-up still is this page's glanceable proof; inside the card's own padding it is
+     about ninety pixels per face on a phone. Cancelling the padding for this figure alone puts
+     it back to the full screen width. Measured on the English sibling, same card, same clamps. */
+  .compare{margin-inline:calc(-1 * clamp(30px,4vw,44px))}
+  .compare img{border-radius:0;border-left:none;border-right:none}
+  .compare figcaption{padding:0 clamp(30px,4vw,44px)}
+  .steplist{padding:6px 20px}
+  .steplist li{flex-direction:column;gap:10px}
+  footer .col2{text-align:start}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://deepmiststudio.com/#org",
+      "name": "Deep Mist AI",
+      "legalName": "Deep Mist AI FZE LLC",
+      "url": "https://deepmiststudio.com/",
+      "logo": "https://deepmiststudio.com/media/og/og-home.jpg",
+      "description": "AI video ad studio producing UGC-style product ads in English and Arabic. Every video is 100% AI-generated and disclosed as such.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ajman Media City",
+        "addressCountry": "AE"
+      },
+      "sameAs": [
+        "https://www.fiverr.com/bram000"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://deepmiststudio.com/#website",
+      "url": "https://deepmiststudio.com/",
+      "name": "Deep Mist AI",
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://deepmiststudio.com/same-ad-three-hooks-ar.html#article",
+      "url": "https://deepmiststudio.com/same-ad-three-hooks-ar.html",
+      "mainEntityOfPage": "https://deepmiststudio.com/same-ad-three-hooks-ar.html",
+      "headline": "حين لا يتغيّر شيء إلا الافتتاحية — ديب ميست",
+      "description": "نسخ متطابقة من إعلان الفيديو العمودي نفسه، لكل نسخة جملتها الافتتاحية الخاصة؛ طريقة مباشرة لرؤية اختبار الافتتاحيات عمليًا قبل أن تنفق على إعلانك.",
+      "image": "https://deepmiststudio.com/media/og/og-same-ad-three-hooks-ar.jpg",
+      "inLanguage": "ar",
+      "datePublished": "2026-08-16",
+      "dateModified": "2026-08-16",
+      "author": {
+        "@id": "https://deepmiststudio.com/#org"
+      },
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      },
+      "isPartOf": {
+        "@id": "https://deepmiststudio.com/#website"
+      },
+      "video": [
+        {
+          "@id": "https://deepmiststudio.com/same-ad-three-hooks-ar.html#video-1"
+        },
+        {
+          "@id": "https://deepmiststudio.com/same-ad-three-hooks-ar.html#video-2"
+        },
+        {
+          "@id": "https://deepmiststudio.com/same-ad-three-hooks-ar.html#video-3"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://deepmiststudio.com/same-ad-three-hooks-ar.html#video-1",
+      "name": "دفوة — افتتاحية المشكلة اليومية (إعلان عمودي مولَّد بالذكاء الاصطناعي)",
+      "description": "إعلان دفوة — ترمس قهوة عربية معزول. الجملة الافتتاحية: «كل مرة أرجع لقهوتي... ألاقيها باردة.» وبقية النسخة مطابقة للنسختين الأخريين.",
+      "contentUrl": "https://deepmiststudio.com/media/dafwa-hook-1.mp4",
+      "thumbnailUrl": "https://deepmiststudio.com/media/dafwa-hook-1-poster.jpg",
+      "uploadDate": "2026-08-16",
+      "duration": "PT10S",
+      "width": 720,
+      "height": 1280,
+      "inLanguage": "ar",
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://deepmiststudio.com/same-ad-three-hooks-ar.html#video-2",
+      "name": "دفوة — افتتاحية النتيجة الملموسة (إعلان عمودي مولَّد بالذكاء الاصطناعي)",
+      "description": "إعلان دفوة — ترمس قهوة عربية معزول. الجملة الافتتاحية: «قهوتي تبقى حارة من البيت... لآخر مشوار.» وبقية النسخة مطابقة للنسختين الأخريين.",
+      "contentUrl": "https://deepmiststudio.com/media/dafwa-hook-2.mp4",
+      "thumbnailUrl": "https://deepmiststudio.com/media/dafwa-hook-2-poster.jpg",
+      "uploadDate": "2026-08-16",
+      "duration": "PT10S",
+      "width": 720,
+      "height": 1280,
+      "inLanguage": "ar",
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://deepmiststudio.com/same-ad-three-hooks-ar.html#video-3",
+      "name": "دفوة — افتتاحية كشف السر (إعلان عمودي مولَّد بالذكاء الاصطناعي)",
+      "description": "إعلان دفوة — ترمس قهوة عربية معزول. الجملة الافتتاحية: «السر مو في القهوة... السر في ترمسي هذا.» وبقية النسخة مطابقة للنسختين الأخريين.",
+      "contentUrl": "https://deepmiststudio.com/media/dafwa-hook-3.mp4",
+      "thumbnailUrl": "https://deepmiststudio.com/media/dafwa-hook-3-poster.jpg",
+      "uploadDate": "2026-08-16",
+      "duration": "PT10S",
+      "width": 720,
+      "height": 1280,
+      "inLanguage": "ar",
+      "publisher": {
+        "@id": "https://deepmiststudio.com/#org"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Deep Mist AI",
+          "item": "https://deepmiststudio.com/index-ar.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "أعمالنا",
+          "item": "https://deepmiststudio.com/index-ar.html#work"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "دفوة — اختبار الجمل الافتتاحية"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="fog"><i></i><i></i></div>
+
+<header class="site">
+  <a class="wordmark" href="index-ar.html">Deep<b>Mist</b>&nbsp;AI</a>
+  <nav>
+    <a href="hooks-food-beverage-ar.html">الجمل الافتتاحية</a>
+    <a href="tools-ar.html">أدوات مجانية</a>
+    <a href="ad-script-builder-ar.html">منشئ سيناريو الإعلان</a>
+    <a href="index-ar.html#work">أعمالنا</a>
+    <a href="free-audit-ar.html">تدقيق مجاني</a>
+    <a href="index-ar.html">الرئيسية</a>
+    <a href="same-ad-three-hooks.html" class="en" hreflang="en">English</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap intro">
+    <p class="crumb"><a href="index-ar.html#work">أعمالنا</a> &nbsp;/&nbsp; دفوة — اختبار الجمل الافتتاحية</p>
+    <div class="eyebrow">اختبار افتتاحيات</div>
+    <h1>الإعلان نفسه، <span class="hl">بثلاث جمل افتتاحية مختلفة،</span> والحكم لك.</h1>
+    <p class="lede">ما تراه في هذه الصفحة نسخٌ متطابقة عمدًا من إعلان قصير عمودي: الممثلة نفسها، والغرفة نفسها، والضوء النهاري ذاته، وجملة ختامية مشتركة تجمع كل نسخة مع أخواتها. الفارق الوحيد هو ما تفتتح به حديثها. شاهد النسخ كاملة، ولاحظ متى يشتد انتباهك ومتى يخفت؛ فهذا الإحساس تحديدًا هو ما نأمل أن تخرج به.</p>
+    <div class="specpill"><b>دفوة علامة ابتكرناها نحن.</b> عمل ذاتي للعرض، لا عمل عميل.</div>
+
+    <div class="premise">
+      <h3 class="sec">لماذا تصحّ المقارنة بين هذه النسخ أصلًا</h3>
+      <p class="premisep">يمكن لأي منتج أن يصوّر إعلانات مختلفة الأجواء ويترك لك التخمين. لكن التباين في المكان أو الوجوه أو الملابس يلوّث المقارنة قبل أن تبدأ. حين تثبت الكاميرا والممثلة والضوء والخاتمة، ويتبدل المنطوق الافتتاحي فقط، يصبح ما يتبقى من فروق بين النسخ مرده مباشرة إلى طريقة الافتتاح؛ وهذا هو المغزى من التثبيت كله.</p>
+      <p class="premisep">على أن ما تراه لا يثبت شيئًا عن الأداء. لم تُشغَّل هذه الإعلانات ضمن بث مدفوع قط، ولا نملك عنها بيانات أداء من أي نوع، ولا نزعم أن افتتاحية منها غلبت سواها. كل ما تتيحه الصفحة هو أن تتذوق الفروق وترتّب ميلك الشخصي؛ أما الحكم الأخير فيُصدره جمهورك أنت حين تختبر عنده.</p>
+    </div>
+
+    <div class="cuts">
+      <h3 class="sec">افتتاحيات مختلفة، وإعلان واحد</h3>
+      <div class="trio">
+        <figure class="cut">
+          <figcaption class="cutlabel"><span class="cutn">٠١</span>افتتاحية المشكلة اليومية</figcaption>
+          <p class="cutline">«كل مرة أرجع لقهوتي... ألاقيها باردة.»</p>
+          <div class="player">
+            <video src="media/dafwa-hook-1.mp4" poster="media/dafwa-hook-1-poster.jpg" controls playsinline preload="none"></video>
+          </div>
+          <p class="cutwhy">تفتتح الممثلة باعتراف صغير عن فنجان يعود إليه صاحبه فيجده فاترًا. المشاهد يتعرف على اللحظة قبل أن يتعرف على المنتج، فيبقى باحثًا عن الحل. يناسب هذا البدء المنتجات التي تعالج انزعاجًا متكررًا — كالأواني الحافظة للحرارة — والمشتري العملي الذي يشتري الراحة لا الفضول.</p>
+        </figure>
+        <figure class="cut">
+          <figcaption class="cutlabel"><span class="cutn">٠٢</span>افتتاحية النتيجة الملموسة</figcaption>
+          <p class="cutline">«قهوتي تبقى حارة من البيت... لآخر مشوار.»</p>
+          <div class="player">
+            <video src="media/dafwa-hook-2.mp4" poster="media/dafwa-hook-2-poster.jpg" controls playsinline preload="none"></video>
+          </div>
+          <p class="cutwhy">هنا يبدأ الكلام من النهاية السعيدة: الوعد محقق في الافتتاحية نفسها، فيتخيل المشاهد يومه هو. يليق هذا المسار بالمشتري المتعجل الذي يريد الخلاصة قبل التفاصيل، ويلائم منتجات يظهر أثرها سريعًا كأدوات التنقل اليومية.</p>
+        </figure>
+        <figure class="cut">
+          <figcaption class="cutlabel"><span class="cutn">٠٣</span>افتتاحية كشف السر</figcaption>
+          <p class="cutline">«السر مو في القهوة... السر في ترمسي هذا.»</p>
+          <div class="player">
+            <video src="media/dafwa-hook-3.mp4" poster="media/dafwa-hook-3-poster.jpg" controls playsinline preload="none"></video>
+          </div>
+          <p class="cutwhy">تبدأ الحيلة بإنكار متوقع ثم انقلاب يردّ السبب إلى الترمس نفسه، فتُفتح فجوة معرفية صغيرة تدفع المشاهد إلى البقاء حتى تُسد. يخدم هذا الطرح العلامات ذات القصة أو التصميم المميز، والمشتري الذي يستمتع بالاكتشاف قبل الشراء.</p>
+        </figure>
+      </div>
+    </div>
+
+    <div class="same">
+      <h3 class="sec">الجزء الذي لا يتغيّر</h3>
+      <p class="sameline">«ترمسي يحبس الحرارة بالداخل... وقهوتي حارة وين ما أروح.»</p>
+      <p class="samewhy">الجملة الختامية كُتبت لتعمل بعد أي افتتاحية: بعد شكوى، وبعد وعد، وبعد تشويق. صيغتها عامة بما يكفي لتكون امتدادًا طبيعيًا لأي مسار، ومحددة بما يكفي لتحمل وعد العلامة كاملًا. هذا التوازن — لا البلاغة — كان القيد الحقيقي في كتابتها.</p>
+      <p class="samewhy">هذا تصوير واحد، لا ثلاثة متطابقة. النصف الأخير من كل نسخة هو الملف نفسه، يوضع خلف كل افتتاحية في المونتاج، وبطاقة النهاية تُركَّب في التمريرة ذاتها. ثم قارنّا الملفات النهائية إطارًا بإطار، لأن صحّة سكربت البناء وصحّة الملف المُسلَّم دعويان مختلفتان.</p>
+      <figure class="compare">
+        <img src="media/dafwa-hooks-compare.jpg" alt="اللحظة نفسها من كل نسخة، جنبًا إلى جنب: المتحدثة نفسها، والحجاب نفسه، والعباءة نفسها، والترمس نفسه، والجدار نفسه — ولا يختلف سوى ما تنطقه." loading="lazy" width="2160" height="1280">
+        <figcaption>إطارات متزامنة من كل نسخة: الممثلة ذاتها بعباءتها وحجابها، والترمس الرملي نفسه، والمقعد الواطئ ذاته؛ التغيير الوحيد هو الافتتاحية المنطوقة.</figcaption>
+      </figure>
+    </div>
+
+    <div class="built">
+      <h3 class="sec">كيف بُني هذا العمل</h3>
+      <ol class="steplist">
+        <li><span class="sn">٠١</span><div><h4>صورة واحدة، لا ثلاث</h4><p>صورة عمودية واحدة للمتحدثة وهي تمسك الترمس، مولَّدة بنسبة تسعة إلى ستة عشر. كل لقطة من اللقطات الأربع في هذه الصفحة تبدأ من الصورة نفسها، ولهذا لا تكون الغرفة والعباءة والضوء والتأطير متشابهة فحسب بين النسخ: إنها الإطار نفسه.</p></div></li>
+        <li><span class="sn">٠٢</span><div><h4>افتتاحيات من الإطار نفسه</h4><p>تُمرَّر تلك الصورة إلى نموذج الفيديو بوصفها الإطار الأول، مرة لكل افتتاحية، ولا يتغيّر بينها سوى الجملة المنطوقة وأداؤها. الصوت يخرج من تمريرة التوليد ذاتها، فمطابقة الشفاه ناتجة عن التوليد لا عن دبلجة لاحقة.</p></div></li>
+        <li><span class="sn">٠٣</span><div><h4>جسم واحد، يُعاد استخدامه</h4><p>النصف الأخير لقطة رابعة من الصورة نفسها، وُلِّدت مرة واحدة ووُضعت خلف الافتتاحيات جميعًا. لا يُعاد توليدها لكل نسخة، فلا يبقى شيء تنجرف إليه.</p></div></li>
+        <li><span class="sn">٠٤</span><div><h4>بطاقة النهاية من متصفح، لا من <span dir="ltr" style="unicode-bidi:isolate">ffmpeg</span></h4><p>هنا يفترق هذا البناء عن نظيره الإنجليزي: أداة الكتابة في <span dir="ltr" style="unicode-bidi:isolate">ffmpeg</span> لا تعيد ترتيب الاتجاه ولا توصل الحروف العربية، فيخرج اسم العلامة حروفًا مفكّكة معكوسة. لذلك تُرسَم البطاقة في متصفح حقيقي بخط عربي، ثم تُركَّب على تعتيم خفيف في المونتاج.</p></div></li>
+        <li><span class="sn">٠٥</span><div><h4>الفحص قبل الاعتماد</h4><p>تُقرأ الملفات النهائية بأداة الفحص وتُقارَن إطارًا بإطار، لا بالنظر: كان على النصف المشترك من النسخ أن يُقاس بوصفه التصوير نفسه قبل أن تقول هذه الصفحة إنه كذلك.</p></div></li>
+      </ol>
+      <div class="specgrid">
+        <div class="spec"><dt>الصيغة</dt><dd>عمودي تسعة إلى ستة عشر، ٧٢٠×١٢٨٠، ٣٠ إطارًا في الثانية</dd></div>
+        <div class="spec"><dt>المدة</dt><dd>١٠٫١ ثانية لكل نسخة، مع الصوت</dd></div>
+        <div class="spec"><dt>اللقطات المولَّدة</dt><dd>أربع — ثلاث افتتاحيات وجسم واحد مشترك</dd></div>
+        <div class="spec"><dt>الصور الثابتة</dt><dd>واحدة، تشترك فيها اللقطات الأربع</dd></div>
+        <div class="spec"><dt>التجميع والفحص</dt><dd><span dir="ltr" style="unicode-bidi:isolate">ffmpeg</span> / <span dir="ltr" style="unicode-bidi:isolate">ffprobe</span></dd></div>
+        <div class="spec"><dt>في موقع التصوير</dt><dd>لا أحد. بلا طاقم، وبلا عيّنات مشحونة</dd></div>
+      </div>
+    </div>
+
+    <div class="brief">
+      <h3 class="sec">الموجز الذي كتبناه لأنفسنا</h3>
+      <dl>
+        <div class="row"><dt>المنتج</dt><dd>ترمس عازل للقهوة العربية بلون رملي غير لامع، وقوام يحيل إلى الدلة.</dd></div>
+        <div class="row"><dt>الجمهور</dt><dd>المتنقلون في يومهم ممن يحبون أن تبقى قهوتهم العربية دافئة حيثما حلّوا.</dd></div>
+        <div class="row"><dt>القيد</dt><dd>ثبات كل عناصر المشهد — الممثلة والغرفة والضوء والخاتمة — مع تغيير الافتتاحية لا غير.</dd></div>
+      </dl>
+    </div>
+
+    <div class="craft">
+      <h3 class="sec">ما الذي تنتبه له</h3>
+      <div class="pts">
+        <div class="pt"><h4>لحظة التسليم</h4><p>راقب الانتقال من نهاية الافتتاحية إلى بداية الجسم المشترك؛ المفترض أن تمضي الجملتان بنَفَس متصل، فلا يشعر المشاهد بانقطاع يوقظه مما يشاهده.</p></div>
+        <div class="pt"><h4>ظلال الجدار الجصّي</h4><p>الضوء النهاري يسقط على الجدار الجصّي الدافئ ويرسم ظلًا هادئًا خلف الممثلة؛ هذا الثبات البصري بين النسخ هو ما يجعل المقارنة عادلة — لاحظه من نسخة إلى أخرى.</p></div>
+        <div class="pt"><h4>ترمس بلا حروف</h4><p>تأمل الترمس الرملي المائل بقوامه إلى الدلة: لا شعار مطبوع ولا حرف على سطحه أصلًا؛ ينصرف انتباهك إلى الكلام المنطوق لا إلى العلامة، وهذا مقصود في التصميم.</p></div>
+      </div>
+    </div>
+
+    <div class="honesty">
+      <h3 class="sec">ما ليست هذه الصفحة</h3>
+      <p>من باب الصراحة: كل إطار في هذه الإعلانات مولَّد بالكامل بالذكاء الاصطناعي، فلا تصوير حقيقي ولا ممثلة فعلية وراءه. و«دفوة» اسم متخيل أنشأناه لهذه الصفحة أساسًا؛ لم يكلّفنا بها أي عميل. ولم تُشغَّل ضمن أي حملة مدفوعة قط، ومن ثم لا نعرض نتائج أداء ولا ندّعيها؛ هذا تمرين حرفي يُظهر طريقة عملنا، لا سجل عملاء.</p>
+      <p><strong>لا نعرف أيّ هذه الافتتاحيات أفضل، وهذه الصفحة لا تستطيع إخبارك.</strong> لا يوجد خلفها عدد مشاهدات، ولا زمن مشاهدة، ولا معدل نقر. خذ الفكرة إلى أرضك: اختر من هذه المسارات ما يليق بمنتجك، وانشر النسخ أمام جمهورك بإنفاق صغير متكافئ، ثم أمسك بالافتتاحية التي كافأك بها مشاهدوك وثبّتها في إعلانك القادم. الرأي النهائي ليس عند الاستوديو ولا عند هذه الصفحة؛ بيانات جمهورك هي الحكم.</p>
+      <p>ليست لدينا تقييمات منشورة بعد، ولن نستعير مصداقية لم نكسبها: لا أسماء عملاء، ولا أرقام تفاعل، ولا دراسات حالة مُختلقة. ما نستطيع عرضه هو العمل والطريقة كاملين، والحكم لك أنت.</p>
+    </div>
+
+    <div class="more">
+      <h3 class="sec">تفكيكات أخرى وجمل افتتاحية مجانية</h3>
+      <div class="nichelinks">
+        <a class="nichelink" href="made-misk-oud-perfume-ad-ar.html">كيف صنعنا إعلان مسك</a>
+        <a class="nichelink" href="made-nakhla-dates-ad-ar.html">كيف صنعنا إعلان نخلة</a>
+        <a class="nichelink" href="ad-script-builder-ar.html">ابنِ سيناريو إعلانك من جملة افتتاحية — مجانًا</a>
+        <a class="nichelink" href="hooks-food-beverage-ar.html">جمل افتتاحية للأطعمة والمشروبات</a>
+        <a class="nichelink all" href="hooks-ar.html">مكتبة الجمل الافتتاحية المجانية</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap close">
+    <h2>احصل على <span class="hl">ثلاث جمل افتتاحية لمنتجك،</span> مجانًا وبلا بريد إلكتروني.</h2>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="free-audit-ar.html">اطلب تدقيقك المجاني</a>
+      <span class="alt">أو اختصر الطريق و<a href="https://www.fiverr.com/bram000">اطلب الإعلان كاملًا عبر فايفر</a> — النص والمتحدثة والمونتاج.</span>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div><div class="fm latin">Deep Mist AI FZE LLC</div>المنطقة الحرة لمدينة عجمان للإعلام، الإمارات العربية المتحدة<br>شركة إنتاج إعلامي مرخّصة · تأسست عام ٢٠١٩</div>
+  <div class="col2"><div class="fm">اصطناعي بصراحة.</div>كل إطار مولَّد بالذكاء الاصطناعي. وكل ادعاء يراجعه إنسان.<br><span dir="ltr" style="unicode-bidi:isolate">© 2026 Deep Mist AI</span></div>
+</footer>
+<script src="js/analytics.js" defer></script>
+</body>
+</html>
